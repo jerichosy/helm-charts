@@ -15,7 +15,7 @@ replicaCount: 1
 ##
 resources:
   requests:
-    memory: 5Gi
+    memory: 4Gi
     cpu: 2.0
 
 lifecycle:
@@ -149,7 +149,7 @@ minecraftServer:
   # One of: LATEST, SNAPSHOT, or a specific version (ie: "1.7.9").
   version: "LATEST"
   # This can be one of "VANILLA", "FORGE", "SPIGOT", "BUKKIT", "PAPER", "FTBA", "SPONGEVANILLA", "CURSEFORGE"
-  type: "VANILLA"
+  type: "AUTO_CURSEFORGE"
   # If type is set to FORGE, this sets the version; this is ignored if forgeInstallerUrl is set
   forgeVersion:
   # If type is set to SPONGEVANILLA, this sets the version
@@ -171,17 +171,17 @@ minecraftServer:
   # Set to true if running Feed The Beast and get an error like "unable to launch forgemodloader"
   ftbLegacyJavaFixer: default
   # One of: peaceful, easy, normal, and hard
-  difficulty: easy
+  difficulty: hard
   # A comma-separated list of player names to whitelist.
   whitelist:
   # A comma-separated list of player names who should be admins.
-  ops:
+  ops: Kyoya1101, Melldee
   # A server icon URL for server listings. Auto-scaled and transcoded.
   icon:
   # Max connected players.
   maxPlayers: 20
   # This sets the maximum possible size in blocks, expressed as a radius, that the world border can obtain.
-  maxWorldSize: 10000
+  maxWorldSize: 2147483647
   # Allows players to travel to the Nether.
   allowNether: default
   # Allows server to announce when a player gets an achievement.
@@ -197,7 +197,7 @@ minecraftServer:
   # The maximum height in which building is allowed.
   maxBuildHeight: 256
   # The maximum number of milliseconds a single tick may take before the server watchdog stops the server with the message. -1 disables this entirely.
-  maxTickTime: 60000
+  maxTickTime: -1
   # Determines if animals will be able to spawn.
   spawnAnimals: default
   # Determines if monsters will be spawned.
@@ -240,24 +240,24 @@ minecraftServer:
   # When true, players will be prompted for a response and will be disconnected if they decline the required pack
   resourcePackEnforce: false
   # Check accounts against Minecraft account service.
-  onlineMode: default
+  onlineMode: false
   # Require public key to be signed by Mojang to join
   enforceSecureProfile: default
   # If you adjust this, you may need to adjust resources.requests above to match.
-  memory: 1024M
+  memory: ""
   # General JVM options to be passed to the Minecraft server invocation
   jvmOpts: ""
   # Options like -X that need to proceed general JVM options
-  jvmXXOpts: ""
+  jvmXXOpts: "-XX:InitialRAMPercentage=60 -XX:MaxRAMPercentage=75"
   # By default, the server configuration will be created and set based on the following environment variables, but only the first time the server is started
   # If you would like to override the server configuration each time the container starts up, you can set this to true
   # see https://github.com/itzg/docker-minecraft-server#server-configuration
   overrideServerProperties: false
   # DEPRECATED: use top-level rconServiceAnnotations instead
   serviceAnnotations: {}
-  serviceType: ClusterIP
+  serviceType: NodePort
   ## Set the port used if the serviceType is NodePort
-  nodePort:
+  nodePort: 25565
   # Set the external port of the service, usefull when using the LoadBalancer service type
   servicePort: 25565
   clusterIP:
@@ -295,7 +295,7 @@ minecraftServer:
       secretKey: cf-api-key
     # Link to modpack in general or a specific file
     # NOTE: In case of specific file - do not point at server file
-    pageUrl: ""
+    pageUrl: "https://www.curseforge.com/minecraft/modpacks/all-the-mods-9"
     # Unique id of modpack, can be used instead of url
     slug: ""
     # Id used to specify which exact modpack file needs to be downloaded
@@ -544,3 +544,4 @@ mcbackup:
 #   options:
 #   - name: ndots
 #     value: '1'
+
