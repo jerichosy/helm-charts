@@ -1,62 +1,63 @@
+{{/* vim: set filetype=mustache: */}}
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "all-the-mods-9.name" -}}
-{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
-{{- end }}
+{{- define "minecraft.name" -}}
+{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
 
 {{/*
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
-If release name contains chart name it will be used as a full name.
 */}}
-{{- define "all-the-mods-9.fullname" -}}
-{{- if .Values.fullnameOverride }}
-{{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
+{{- define "minecraft.fullname" -}}
+{{- $name := default .Chart.Name .Values.nameOverride -}}
+{{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
+{{- define "minecraft.ingress.apiVersion" -}}
+{{- if semverCompare "<1.14-0" .Capabilities.KubeVersion.Version -}}
+{{- print "extensions/v1beta1" -}}
+{{- else if semverCompare "<1.19-0" .Capabilities.KubeVersion.Version -}}
+{{- print "networking.k8s.io/v1beta1" -}}
+{{- else -}}
+{{- print "networking.k8s.io/v1" -}}
+{{- end }}
+{{- end -}}
+
+{{- define "minecraft.envMap" }}
+{{- if index . 1 }}
+        - name: {{ index . 0 }}
+          value: {{ index . 1 | quote }}
+{{- end }}
+{{- end }}
+
+{{- define "minecraft.envBoolMap" }}
+{{- if ne (toString (index . 1)) "default" }}
+        - name: {{ index . 0 }}
+          value: {{ index . 1 | quote }}
+{{- end }}
+{{- end }}
+
+{{- define "extraDeploy.render" -}}
+{{- $value := typeIs "string" .value | ternary .value (.value | toYaml) }}
+{{- if contains "{{" (toJson .value) }}
+  {{- if .scope }}
+      {{- tpl (cat "{{- with $.RelativeScope -}}" $value "{{- end }}") (merge (dict "RelativeScope" .scope) .context) }}
+  {{- else }}
+    {{- tpl $value .context }}
+  {{- end }}
 {{- else }}
-{{- $name := default .Chart.Name .Values.nameOverride }}
-{{- if contains $name .Release.Name }}
-{{- .Release.Name | trunc 63 | trimSuffix "-" }}
-{{- else }}
-{{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" }}
+    {{- $value }}
 {{- end }}
-{{- end }}
-{{- end }}
+{{- end -}}
 
-{{/*
-Create chart name and version as used by the chart label.
-*/}}
-{{- define "all-the-mods-9.chart" -}}
-{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
+{{- define "isResticWithRclone" -}}
+{{- if .Values.mcbackup -}}
+{{-   if and (eq .Values.mcbackup.backupMethod "restic") (hasPrefix "rclone" .Values.mcbackup.resticRepository) }}
+{{-   printf "true" }}
+{{-   else }}
+{{-   printf "false" }}
+{{-   end }}
 {{- end }}
-
-{{/*
-Common labels
-*/}}
-{{- define "all-the-mods-9.labels" -}}
-helm.sh/chart: {{ include "all-the-mods-9.chart" . }}
-{{ include "all-the-mods-9.selectorLabels" . }}
-{{- if .Chart.AppVersion }}
-app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
-{{- end }}
-app.kubernetes.io/managed-by: {{ .Release.Service }}
-{{- end }}
-
-{{/*
-Selector labels
-*/}}
-{{- define "all-the-mods-9.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "all-the-mods-9.name" . }}
-app.kubernetes.io/instance: {{ .Release.Name }}
-{{- end }}
-
-{{/*
-Create the name of the service account to use
-*/}}
-{{- define "all-the-mods-9.serviceAccountName" -}}
-{{- if .Values.serviceAccount.create }}
-{{- default (include "all-the-mods-9.fullname" .) .Values.serviceAccount.name }}
-{{- else }}
-{{- default "default" .Values.serviceAccount.name }}
-{{- end }}
-{{- end }}
+{{- end -}}
