@@ -64,7 +64,7 @@ livenessProbe:
   periodSeconds: 5
   failureThreshold: 20
   successThreshold: 1
-  timeoutSeconds: 1
+  timeoutSeconds: 30
 readinessProbe:
   command:
     - mc-health
@@ -72,7 +72,7 @@ readinessProbe:
   periodSeconds: 5
   failureThreshold: 20
   successThreshold: 1
-  timeoutSeconds: 1
+  timeoutSeconds: 30
 startupProbe:
   command:
     - mc-health
