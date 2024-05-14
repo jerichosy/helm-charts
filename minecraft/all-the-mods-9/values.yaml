@@ -175,7 +175,7 @@ minecraftServer:
   # A comma-separated list of player names to whitelist.
   whitelist:
   # A comma-separated list of player names who should be admins.
-  ops: Kyoya1101, Melldee
+  ops:
   # A server icon URL for server listings. Auto-scaled and transcoded.
   icon:
   # Max connected players.
