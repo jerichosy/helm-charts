@@ -15,7 +15,7 @@ replicaCount: 1
 ##
 resources:
   requests:
-    memory: 4Gi
+    memory: 6Gi
     cpu: 2.0
 
 lifecycle:
