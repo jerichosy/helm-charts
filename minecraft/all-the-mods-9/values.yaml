@@ -15,7 +15,7 @@ replicaCount: 1
 ##
 resources:
   requests:
-    memory: 6Gi
+    memory: 5Gi
     cpu: 2.0
 
 lifecycle:
@@ -244,11 +244,11 @@ minecraftServer:
   # Require public key to be signed by Mojang to join
   enforceSecureProfile: default
   # If you adjust this, you may need to adjust resources.requests above to match.
-  memory: ""
+  memory: 4096M
   # General JVM options to be passed to the Minecraft server invocation
   jvmOpts: ""
   # Options like -X that need to proceed general JVM options
-  jvmXXOpts: "-XX:InitialRAMPercentage=60 -XX:MaxRAMPercentage=75"
+  jvmXXOpts: ""
   # By default, the server configuration will be created and set based on the following environment variables, but only the first time the server is started
   # If you would like to override the server configuration each time the container starts up, you can set this to true
   # see https://github.com/itzg/docker-minecraft-server#server-configuration
