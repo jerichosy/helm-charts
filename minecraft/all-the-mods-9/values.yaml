@@ -60,7 +60,7 @@ securityContext:
 livenessProbe:
   command:
     - mc-health
-  initialDelaySeconds: 30
+  initialDelaySeconds: 180
   periodSeconds: 5
   failureThreshold: 20
   successThreshold: 1
@@ -68,7 +68,7 @@ livenessProbe:
 readinessProbe:
   command:
     - mc-health
-  initialDelaySeconds: 30
+  initialDelaySeconds: 180
   periodSeconds: 5
   failureThreshold: 20
   successThreshold: 1
