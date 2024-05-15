@@ -342,7 +342,7 @@ minecraftServer:
     # externalTrafficPolicy: Cluster
 
   extraPorts:
-    - name: simple-voice-chat
+    - name: simple-vc
       containerPort: 24454
       protocol: UDP
       service:
@@ -355,7 +355,7 @@ minecraftServer:
         externalTrafficPolicy: Cluster
         port: 24454
       ingress:
-        ingressClassName: simple-voice-chat
+        ingressClassName: simple-vc
         enabled: false
         annotations:
 
