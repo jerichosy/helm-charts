@@ -422,7 +422,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: "standard"
+  storageClass: "local-path"
   dataDir:
     # Set this to false if you don't care to persist state between restarts.
     enabled: true
@@ -548,7 +548,7 @@ mcbackup:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "standard"
+    storageClass: "local-path"
     backupDir:
       # Set this to false if you don't care to persist state between restarts.
       enabled: true
