@@ -281,8 +281,8 @@ minecraftServer:
   # A list of Modrinth project slugs with optional version after colon
   modrinth:
     projects: |
-      dvl8hhBz
-      4jlHn8n5
+      customskinloader:dvl8hhBz
+      simple-voice-chat:4jlHn8n5
     # Downloads Modrinth project dependencies marked as optional
     optionalDependencies: false
     # The version type is used to determine the newest version to use from each project. The allowed values are: release, beta, alpha
