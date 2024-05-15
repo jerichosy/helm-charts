@@ -346,7 +346,13 @@ minecraftServer:
       containerPort: 24454
       protocol: UDP
       service:
+        enabled: true
+        embedded: false
+        annotations: {}
         type: LoadBalancer
+        loadBalancerIP: ""
+        loadBalancerSourceRanges: []
+        externalTrafficPolicy: Cluster
         port: 24454
 
     # These options allow you to expose another port from the Minecraft server, plugins such
