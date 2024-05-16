@@ -76,7 +76,20 @@ minecraftServer:
         externalTrafficPolicy: Cluster
         port: 24454
       ingress:
-        ingressClassName: simple-vc
+        ingressClassName: nginx
+        enabled: false
+        annotations:
+
+    - name: prometheus
+      containerPort: 19565
+      protocol: TCP
+      service:
+        enabled: true
+        embedded: false
+        annotations: {}
+        type: ClusterIP
+      ingress:
+        ingressClassName: nginx
         enabled: false
         annotations:
 
