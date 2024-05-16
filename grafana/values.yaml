@@ -8,4 +8,4 @@ persistence:
 
 service:
   type: NodePort
-  nodePort: 56810
+  nodePort: 31765
