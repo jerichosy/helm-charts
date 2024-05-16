@@ -32,7 +32,7 @@ minecraftServer:
   spawnMonsters: default
   spawnNPCs: default
   spawnProtection: 16
-  viewDistance: 16
+  viewDistance: 10
   gameMode: survival
   motd: "If you read this, that means Kyoya needs to make an MOTD :)"
   pvp: default
