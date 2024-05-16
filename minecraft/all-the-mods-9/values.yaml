@@ -86,7 +86,9 @@ minecraftServer:
       service:
         enabled: true
         embedded: false
-        annotations: {}
+        annotations:
+          prometheus.io/scrape: "true"
+          prometheus.io/port: "19565"
         type: ClusterIP
         port: 19565
       ingress:
