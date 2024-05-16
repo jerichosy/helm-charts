@@ -7,7 +7,7 @@ image:
 
 resources:
   requests:
-    memory: 9Gi
+    memory: 8Gi
     cpu: 2.0
 
 
@@ -93,7 +93,7 @@ persistence:
   storageClass: "local-path"
   dataDir:
     enabled: true
-    Size: 15Gi
+    Size: 5Gi
     accessModes:
       - ReadWriteOnce
 
