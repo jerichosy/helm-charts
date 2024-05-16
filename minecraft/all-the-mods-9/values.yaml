@@ -7,8 +7,8 @@ image:
 
 resources:
   requests:
-    memory: 8Gi
-    cpu: 2.0
+    memory: 9Gi
+    cpu: 2000m
 
 
 minecraftServer:
@@ -93,7 +93,7 @@ persistence:
   storageClass: "local-path"
   dataDir:
     enabled: true
-    Size: 5Gi
+    Size: 10Gi
     accessModes:
       - ReadWriteOnce
 
