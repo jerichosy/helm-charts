@@ -400,7 +400,8 @@ minecraftServer:
 ## Values can be either variable values or `valueFrom` yaml
 ##
 extraEnv:
-  {}
+  ALLOW_FLIGHT: true
+
   # some_variable: some value
   # another_variable:
   #   valueFrom:
