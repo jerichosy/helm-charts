@@ -17,7 +17,7 @@ minecraftServer:
   type: "AUTO_CURSEFORGE"
   difficulty: hard
   whitelist:
-  ops:
+  ops: "Kyoya1101"
   icon:
   maxPlayers: 20
   maxWorldSize: 2147483647
@@ -32,9 +32,9 @@ minecraftServer:
   spawnMonsters: default
   spawnNPCs: default
   spawnProtection: 16
-  viewDistance: 10
+  viewDistance: 16
   gameMode: survival
-  motd: "Welcome to Minecraft on Kubernetes!"
+  motd: "If you read this, that means Kyoya needs to make an MOTD :)"
   pvp: default
   levelType: DEFAULT
   worldSaveName: world
@@ -101,6 +101,12 @@ extraEnv:
   CURSEFORGE_FILES: |
     https://www.curseforge.com/minecraft/mc-mods/prometheus-exporter/files/4694230
   ALLOW_FLIGHT: true
+  USE_AIKAR_FLAGS: true
+  ENABLE_AUTOPAUSE: true
+  ENABLE_ROLLING_LOGS: true
+  TZ: Asia/Manila
+  LOG_TIMESTAMP: true
+  SIMULATION_DISTANCE: 6
 
 
 persistence:
