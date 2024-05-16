@@ -93,7 +93,7 @@ persistence:
   storageClass: "local-path"
   dataDir:
     enabled: true
-    Size: 10Gi
+    Size: 15Gi
     accessModes:
       - ReadWriteOnce
 
