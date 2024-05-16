@@ -1,0 +1,11 @@
+adminUser: jericho
+adminPassword: "CHANGEME"
+
+persistence:
+  enabled: true
+  storageClassName: local-path
+  size: 1Gi
+
+service:
+  type: NodePort
+  nodePort: 56810
