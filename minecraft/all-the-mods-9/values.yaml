@@ -101,7 +101,6 @@ minecraft:
       https://www.curseforge.com/minecraft/mc-mods/prometheus-exporter/files/4694230
     ALLOW_FLIGHT: true
     USE_AIKAR_FLAGS: true
-    ENABLE_AUTOPAUSE: true
     ENABLE_ROLLING_LOGS: true
     TZ: Asia/Manila
     LOG_TIMESTAMP: true
