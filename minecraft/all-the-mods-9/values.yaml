@@ -144,8 +144,14 @@ rcon-web-admin:
     isAdmin: true
     username: jericho
     password: "CHANGEME"
+
   service:
     type: LoadBalancer
     httpPort: 31750
     wsPort: 31751
+
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
 
