@@ -144,4 +144,8 @@ rcon-web-admin:
     isAdmin: true
     username: jericho
     password: "CHANGEME"
+  ingress:
+    enabled: true
+    host: "changeme.local"
+    path: /atm9/rcon
 
