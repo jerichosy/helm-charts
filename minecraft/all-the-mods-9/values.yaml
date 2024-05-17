@@ -147,6 +147,7 @@ rcon-web-admin:
     password: "CHANGEME"
     rconHost: "CHANGME"
     rconPassword: "CHANGEME"
+    rconPort: ""
 
   service:
     type: LoadBalancer
