@@ -9,7 +9,7 @@ minecraft:
     requests:
       cpu: 1000m
     limits:
-      memory: 9Gi
+      memory: 10Gi
 
   minecraftServer:
     eula: "TRUE"
