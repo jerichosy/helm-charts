@@ -7,8 +7,9 @@ minecraft:
 
   resources:
     requests:
-      memory: 9Gi
       cpu: 1000m
+    limits:
+      memory: 9Gi
 
   minecraftServer:
     eula: "TRUE"
