@@ -1,144 +1,147 @@
-image:
-  repository: itzg/minecraft-server
-  tag: java21-graalvm
-  pullPolicy: IfNotPresent
-  pullSecret: ""
+minecraft:
+  image:
+    repository: itzg/minecraft-server
+    tag: java21-graalvm
+    pullPolicy: IfNotPresent
+    pullSecret: ""
 
+  resources:
+    requests:
+      memory: 9Gi
+      cpu: 1000m
 
-resources:
-  requests:
-    memory: 9Gi
-    cpu: 2000m
+  minecraftServer:
+    eula: "TRUE"
+    version: "LATEST"
+    type: "AUTO_CURSEFORGE"
+    difficulty: hard
+    whitelist:
+    ops:
+    icon: "http://2.bp.blogspot.com/-2O5yrS0ewr0/UWWqjfJiMSI/AAAAAAAAAEc/TWtHsZMh5F8/s1600/New_USSR.png"
+    maxPlayers: 20
+    maxWorldSize: 2147483647
+    allowNether: default
+    announcePlayerAchievements: default
+    enableCommandBlock: default
+    forcegameMode: default
+    generateStructures: default
+    hardcore: default
+    maxBuildHeight: 256
+    maxTickTime: -1
+    spawnMonsters: default
+    spawnNPCs: default
+    spawnProtection: 16
+    viewDistance: 10
+    gameMode: survival
+    motd: "If you read this, that means Kyoya needs to make an MOTD :)"
+    pvp: default
+    levelType: DEFAULT
+    worldSaveName: world
+    removeOldMods: false
+    resourcePackEnforce: false
+    onlineMode: false
+    enforceSecureProfile: default
+    memory: 8G
+    overrideServerProperties: true
+    serviceType: LoadBalancer
+    servicePort: 25565
 
+    modrinth:
+      projects:
+        - 'simple-voice-chat:4jlHn8n5'
 
-minecraftServer:
-  eula: "TRUE"
-  version: "LATEST"
-  type: "AUTO_CURSEFORGE"
-  difficulty: hard
-  whitelist:
-  ops: "Kyoya1101"
-  icon:
-  maxPlayers: 20
-  maxWorldSize: 2147483647
-  allowNether: default
-  announcePlayerAchievements: default
-  enableCommandBlock: default
-  forcegameMode: default
-  generateStructures: default
-  hardcore: default
-  maxBuildHeight: 256
-  maxTickTime: -1
-  spawnMonsters: default
-  spawnNPCs: default
-  spawnProtection: 16
-  viewDistance: 10
-  gameMode: survival
-  motd: "If you read this, that means Kyoya needs to make an MOTD :)"
-  pvp: default
-  levelType: DEFAULT
-  worldSaveName: world
-  removeOldMods: false
-  resourcePackEnforce: false
-  onlineMode: false
-  enforceSecureProfile: default
-  memory: 8G
-  overrideServerProperties: true
-  serviceType: LoadBalancer
-  servicePort: 25565
+    autoCurseForge:
+      apiKey:
+        key: "CHANGEME!"
+      pageUrl: "https://www.curseforge.com/minecraft/modpacks/all-the-mods-9"
 
-  modrinth:
-    projects:
-      - 'simple-voice-chat:4jlHn8n5'
+    rcon:
+      password: "CHANGEME!"
+      enabled: true
+      port: 25575
+      serviceType: ClusterIP
 
-  autoCurseForge:
-    apiKey:
-      key: "CHANGEME IN MANIFEST!"
-    pageUrl: "https://www.curseforge.com/minecraft/modpacks/all-the-mods-9"
+    extraPorts:
+      - name: simple-vc
+        containerPort: 24454
+        protocol: UDP
+        service:
+          enabled: true
+          embedded: false
+          annotations: {}
+          type: LoadBalancer
+          loadBalancerIP: ""
+          loadBalancerSourceRanges: []
+          externalTrafficPolicy: Cluster
+          port: 24454
+        ingress:
+          ingressClassName: nginx
+          enabled: false
+          annotations:
 
-  rcon:
-    password: "CHANGEME IN MANIFEST!"
-    enabled: true
-    port: 25575
-    serviceType: ClusterIP
+      - name: prometheus
+        containerPort: 19565
+        protocol: TCP
+        service:
+          enabled: true
+          embedded: false
+          annotations:
+            prometheus.io/scrape: "true"
+            prometheus.io/port: "19565"
+          type: ClusterIP
+          port: 19565
+        ingress:
+          ingressClassName: nginx
+          enabled: false
+          annotations:
 
-  extraPorts:
-    - name: simple-vc
-      containerPort: 24454
-      protocol: UDP
-      service:
-        enabled: true
-        embedded: false
-        annotations: {}
-        type: LoadBalancer
-        loadBalancerIP: ""
-        loadBalancerSourceRanges: []
-        externalTrafficPolicy: Cluster
-        port: 24454
-      ingress:
-        ingressClassName: nginx
-        enabled: false
-        annotations:
+  extraEnv:
+    CURSEFORGE_FILES: |
+      https://www.curseforge.com/minecraft/mc-mods/prometheus-exporter/files/4694230
+    ALLOW_FLIGHT: true
+    USE_AIKAR_FLAGS: true
+    ENABLE_AUTOPAUSE: true
+    ENABLE_ROLLING_LOGS: true
+    TZ: Asia/Manila
+    LOG_TIMESTAMP: true
+    SIMULATION_DISTANCE: 6
 
-    - name: prometheus
-      containerPort: 19565
-      protocol: TCP
-      service:
-        enabled: true
-        embedded: false
-        annotations:
-          prometheus.io/scrape: "true"
-          prometheus.io/port: "19565"
-        type: ClusterIP
-        port: 19565
-      ingress:
-        ingressClassName: nginx
-        enabled: false
-        annotations:
+  persistence:
+    labels: {}
+    annotations: {}
+    storageClass: "local-path"
+    dataDir:
+      enabled: true
+      Size: 5Gi
+      accessModes:
+        - ReadWriteOnce
 
+  livenessProbe:
+    command:
+      - mc-health
+    initialDelaySeconds: 180
+    periodSeconds: 5
+    failureThreshold: 20
+    successThreshold: 1
+    timeoutSeconds: 30
+  readinessProbe:
+    command:
+      - mc-health
+    initialDelaySeconds: 180
+    periodSeconds: 5
+    failureThreshold: 20
+    successThreshold: 1
+    timeoutSeconds: 30
+  startupProbe:
+    command:
+      - mc-health
+    enabled: false
+    failureThreshold: 30
+    periodSeconds: 10
 
-extraEnv:
-  CURSEFORGE_FILES: |
-    https://www.curseforge.com/minecraft/mc-mods/prometheus-exporter/files/4694230
-  ALLOW_FLIGHT: true
-  USE_AIKAR_FLAGS: true
-  ENABLE_AUTOPAUSE: true
-  ENABLE_ROLLING_LOGS: true
-  TZ: Asia/Manila
-  LOG_TIMESTAMP: true
-  SIMULATION_DISTANCE: 6
+rcon-web-admin:
+  rconWeb:
+    isAdmin: true
+    username: jericho
+    password: "CHANGEME"
 
-
-persistence:
-  labels: {}
-  annotations: {}
-  storageClass: "local-path"
-  dataDir:
-    enabled: true
-    Size: 15Gi
-    accessModes:
-      - ReadWriteOnce
-
-
-livenessProbe:
-  command:
-    - mc-health
-  initialDelaySeconds: 180
-  periodSeconds: 5
-  failureThreshold: 20
-  successThreshold: 1
-  timeoutSeconds: 30
-readinessProbe:
-  command:
-    - mc-health
-  initialDelaySeconds: 180
-  periodSeconds: 5
-  failureThreshold: 20
-  successThreshold: 1
-  timeoutSeconds: 30
-startupProbe:
-  command:
-    - mc-health
-  enabled: false
-  failureThreshold: 30
-  periodSeconds: 10
