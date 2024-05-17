@@ -1,0 +1,10 @@
+apiVersion: v2
+name: grafana
+description: SEGS Helm Chart for Grafana
+type: application
+version: 1.0.0
+appVersion: "1.16.0"
+dependencies:
+  - name: grafana
+    version: "10.0.12"
+    repository: "https://charts.bitnami.com/bitnami"

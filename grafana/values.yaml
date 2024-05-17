@@ -1,11 +1,16 @@
-adminUser: jericho
-adminPassword: "CHANGEME"
+admin:
+  user: jericho
+  password: "CHANGEME"
 
 persistence:
-  enabled: true
-  storageClassName: local-path
+  storageClass: "local-path"
   size: 1Gi
 
 service:
   type: NodePort
-  nodePort: 31765
+  nodePorts:
+    grafana: "31765"
+
+config:
+  useGrafanaIniFile: true
+  grafanaIniConfigMap: grafana-extra-ini
