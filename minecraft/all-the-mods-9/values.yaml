@@ -139,21 +139,3 @@ minecraft:
     failureThreshold: 30
     periodSeconds: 10
 
-rcon-web-admin:
-  rconWeb:
-    isAdmin: true
-    username: jericho
-    password: "CHANGEME"
-    rconHost: "CHANGME"
-    rconPassword: "CHANGEME"
-
-  service:
-    type: LoadBalancer
-    httpPort: 31750
-    wsPort: 31751
-
-  resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
-
