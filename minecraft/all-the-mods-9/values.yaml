@@ -50,6 +50,7 @@ minecraft:
     modrinth:
       projects:
         - 'simple-voice-chat:4jlHn8n5'
+        - 'dcintegration:ILJrSvYW'
 
     autoCurseForge:
       apiKey:
