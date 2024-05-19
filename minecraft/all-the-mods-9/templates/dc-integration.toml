@@ -1,0 +1,173 @@
+{{- define "dci.config" -}}
+{{- with .Values.dcIntegration -}}
+[general]
+  botToken = {{ .bot.token | default "" | quote }}
+  botChannel = {{ .bot.channel | default "" | quote }}
+  botStatusName = {{ .status.name }}
+  botStatusNameSingular = {{ .status.nameSingular }}
+  botStatusNameEmpty = {{ .status.nameEmpty }}
+  botStatusType = {{ .status.type }}
+  streamingURL = {{ .status.streamUrl }}
+  enableUpdateChecker = true
+  updateCheckerMinimumReleaseType = "beta"
+  allowConfigMigration = true
+  ignoreFileSource = false
+  allowWebhookMessages = false
+  allowAutomaticBugFixing = true
+[compatibility]
+  disableParsingMentionsIngame = false
+[commands]
+  enabled = true
+  adminRoleIDs = [ {{ range $index, $value := .admin.roleIds }}{{ if $index }}, {{ end }}{{ $value }}{{ end }} ]
+  listCmdEnabled = true
+  hideListCmd = true
+  uptimeCmdEnabled = true
+  hideUptimeCmd = false
+  useLocalCommands = false
+
+    [[commands.customCommands]]
+      name = "kick"
+      description = "Kicks an player from the Server"
+      mcCommand = "kick %player% %reason%"
+      textToSend = ""
+      adminOnly = true
+      hidden = false
+
+        [[commands.customCommands.args]]
+          name = "player"
+          description = "The player to be kicked"
+          optional = false
+
+        [[commands.customCommands.args]]
+          name = "reason"
+          description = "Reason for the kick"
+          optional = true
+
+    [[commands.customCommands]]
+      name = "stop"
+      description = "Stops the server"
+      mcCommand = "stop"
+      textToSend = ""
+      adminOnly = true
+      hidden = false
+args = [    ]
+
+    [[commands.customCommands]]
+      name = "kill"
+      description = "Kills an Player or Entity"
+      mcCommand = "kill %target%"
+      textToSend = ""
+      adminOnly = true
+      hidden = false
+
+        [[commands.customCommands.args]]
+          name = "target"
+          description = "The target(s) for the kill command."
+          optional = false
+[messages]
+  language = "local"
+  sendOnSayCommand = true
+  sendOnMeCommand = true
+  tellrawSelector = ""
+  sayCommandIgnoredPrefix = "§4§6§k§r"
+  discordRoleColorIngame = true
+  enableHoverMessage = true
+charBlacklist = [  "࿕", "࿖"  ]
+[embedMode]
+  enabled = false
+
+    [embedMode.startMessages]
+      asEmbed = true
+      colorHexCode = "#57f287"
+      customJSON = ""
+
+    [embedMode.stopMessages]
+      asEmbed = true
+      colorHexCode = "#ed4245"
+      customJSON = ""
+
+    [embedMode.playerJoinMessage]
+      asEmbed = true
+      colorHexCode = "#57f287"
+      customJSON = ""
+
+    [embedMode.playerLeaveMessages]
+      asEmbed = true
+      colorHexCode = "#ed4245"
+      customJSON = ""
+
+    [embedMode.deathMessage]
+      asEmbed = true
+      colorHexCode = "#000000"
+      customJSON = ""
+
+    [embedMode.advancementMessage]
+      asEmbed = true
+      colorHexCode = "#fee75c"
+      customJSON = ""
+
+    [embedMode.chatMessages]
+      generateUniqueColors = true
+      asEmbed = true
+      colorHexCode = "#808080"
+      customJSON = ""
+[advanced]
+  serverChannelID = "default"
+  deathsChannelID = "default"
+  chatOutputChannelID = "default"
+  chatInputChannelID = "default"
+  baseAPIUrl = "https://discord.com"
+[forgeSpecific]
+IMC_modIdBlacklist = [  "examplemod"  ]
+  sendItemInfo = true
+[linking]
+  unlinkOnLeave = true
+  enableLinking = true
+  shouldNickname = false
+  globalLinking = true
+  databaseClass = "de.erdbeerbaerlp.dcintegration.common.storage.linking.database.JSONInterface"
+  linkedRoleID = "0"
+  whitelistMode = false
+requiredRoles = [    ]
+settingsBlacklist = [    ]
+    [linking.personalSettingsDefaults]
+      default_useDiscordNameInChannel = true
+      default_ignoreReactions = false
+      default_pingSound = true
+[webhook]
+  enable = false
+  serverAvatarURL = "https://raw.githubusercontent.com/ErdbeerbaerLP/Discord-Chat-Integration/master/images/srv.png"
+  serverName = "Minecraft Server"
+  useServerNameForRcon = true
+  useServerNameForConsole = true
+  playerAvatarURL = "https://api.tydiumcraft.net/v1/players/skin?uuid=%uuid%&type=avatar&randomuuid=%randomUUID%"
+  webhookName = "MC_DC_INTEGRATION"
+[ingameCommand]
+  enabled = {{ .inGame.enabled }}
+  message = {{ .inGame.message }}
+  hoverMessage = {{ .inGame.hoverMessage }}
+  inviteURL = {{ .inGame.inviteUrl }}
+[commandLog]
+  channelID = {{ .log.channel }}
+  message = {{ .log.message }}
+  ignoredCommands = [ {{ range $index, $value := .log.ignore }}{{ if $index }}, {{ end }}{{ . | quote }}{{ end }} ]
+  commandWhitelist = {{ .log.whiteList }}
+[votifier]
+  enabled = true
+  votifierChannelID = "default"
+  message = ":ballot_box: %player% just voted on %site%"
+  name = "Votifier"
+  avatarURL = "https://www.cubecraft.net/attachments/bkjvmqn-png.126824/"
+[dynmap]
+  dcMessage = "<%sender%> %msg%"
+  dynmapChannelID = "default"
+  name = "Dynmap Web-Chat"
+  avatarURL = "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/91/Map_Zoom_0.png/revision/latest?cb=20200311153330"
+  webName = "%name% (discord)"
+  unnamed = "Unnamed"
+[bstats]
+  sendAddonStats = true
+[bungee]
+  isBehindBungee = false
+{{- end }}
+{{- end }}

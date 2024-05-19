@@ -3,12 +3,39 @@ dcIntegration:
     token:
     channel:
   status:
-    name:
-    nameSingular:
-    nameEmpty:
+    # Type of the bots status
+    # Allowed Values: DISABLED,PLAYING,WATCHING,LISTENING,STREAMING,COMPETING,CUSTOM
+    type: CUSTOM
+    # PLACEHOLDERS:
+    # %online% - Online Players
+    # %max% - Maximum Player Amount
+    name: "%online% players online"
+    nameSingular: "%online% player online"
+    nameEmpty: "No-one is online"
+    # URL of the bots stream when using the status type 'STREAMING'
+    streamUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   admin:
-    roleIds:
-
+    roleIds: []
+  inGame:
+    # Enable the /discord command to show an custom message with invite URL?
+    enabled: true
+    message: "Join our discord! https://discord.gg/myserver"
+    hoverMessage: "Click to open the invite url"
+    inviteUrl: "https://discord.gg/myserver"
+  log:
+    # Channel ID for the command log channel, leave 0 to disable
+    channel: "0"
+    # PLACEHOLDERS:
+    # %sender% - The name of the Command Source
+    # %cmd% - executed command (e.g. "say Hello World"
+    # %cmd-no-args% - Command without arguments (e.g. "say"
+    message: "%sender% executed command `%cmd%`"
+    ignore:
+      - "list"
+      - "help"
+      - "?"
+    # Turn blacklisted commands into whitelisted commands
+    whiteList: false
 
 minecraft:
   image:
