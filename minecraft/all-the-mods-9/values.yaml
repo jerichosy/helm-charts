@@ -67,7 +67,7 @@ minecraft:
     autoCurseForge:
       apiKey:
         key: "CHANGEME!"
-      pageUrl: "https://www.curseforge.com/minecraft/modpacks/all-the-mods-9"
+      pageUrl: "https://www.curseforge.com/minecraft/modpacks/all-the-mods-9/files/5289491"
 
     rcon:
       password: "CHANGEME!"
