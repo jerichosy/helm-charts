@@ -2,6 +2,10 @@ dcIntegration:
   bot:
     token:
     channel:
+
+  admin:
+    roleIds: []
+
   status:
     # Type of the bots status
     # Allowed Values: DISABLED,PLAYING,WATCHING,LISTENING,STREAMING,COMPETING,CUSTOM
@@ -14,14 +18,14 @@ dcIntegration:
     nameEmpty: "No-one is online"
     # URL of the bots stream when using the status type 'STREAMING'
     streamUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-  admin:
-    roleIds: []
+
   inGame:
     # Enable the /discord command to show an custom message with invite URL?
     enabled: true
     message: "Join our discord! https://discord.gg/myserver"
     hoverMessage: "Click to open the invite url"
     inviteUrl: "https://discord.gg/myserver"
+
   log:
     # Channel ID for the command log channel, leave 0 to disable
     channel: "0"
