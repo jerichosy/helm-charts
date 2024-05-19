@@ -5,7 +5,7 @@
   # DO NOT SHARE IT WITH ANYONE!
   botToken = {{ .Values.dcIntegration.bot.token | default "" | quote }}
   # The channel ID where the bot will be working in
-  botChannel = {{ .Values.dcIntegration.bot.channel | default "" quote }}
+  botChannel = {{ .Values.dcIntegration.bot.channel | default "" | quote }}
   # The bots status message
   #
   # PLACEHOLDERS:
