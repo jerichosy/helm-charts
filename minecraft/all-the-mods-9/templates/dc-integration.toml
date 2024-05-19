@@ -3,11 +3,11 @@
 [general]
   botToken = {{ .bot.token | default "" | quote }}
   botChannel = {{ .bot.channel | default "" | quote }}
-  botStatusName = {{ .status.name }}
-  botStatusNameSingular = {{ .status.nameSingular }}
-  botStatusNameEmpty = {{ .status.nameEmpty }}
-  botStatusType = {{ .status.type }}
-  streamingURL = {{ .status.streamUrl }}
+  botStatusName = {{ .status.name | quote }}
+  botStatusNameSingular = {{ .status.nameSingular | quote }}
+  botStatusNameEmpty = {{ .status.nameEmpty | quote }}
+  botStatusType = {{ .status.type | quote }}
+  streamingURL = {{ .status.streamUrl | quote }}
   enableUpdateChecker = true
   updateCheckerMinimumReleaseType = "beta"
   allowConfigMigration = true
@@ -144,12 +144,12 @@ settingsBlacklist = [    ]
   webhookName = "MC_DC_INTEGRATION"
 [ingameCommand]
   enabled = {{ .inGame.enabled }}
-  message = {{ .inGame.message }}
-  hoverMessage = {{ .inGame.hoverMessage }}
-  inviteURL = {{ .inGame.inviteUrl }}
+  message = {{ .inGame.message | quote }}
+  hoverMessage = {{ .inGame.hoverMessage | quote }}
+  inviteURL = {{ .inGame.inviteUrl | quote }}
 [commandLog]
-  channelID = {{ .log.channel }}
-  message = {{ .log.message }}
+  channelID = {{ .log.channel | quote}}
+  message = {{ .log.message | quote }}
   ignoredCommands = [ {{ range $index, $value := .log.ignore }}{{ if $index }}, {{ end }}{{ . | quote }}{{ end }} ]
   commandWhitelist = {{ .log.whiteList }}
 [votifier]
