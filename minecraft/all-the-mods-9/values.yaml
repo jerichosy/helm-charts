@@ -1,3 +1,15 @@
+dcIntegration:
+  bot:
+    token: CHANGEME!
+    channel: CHANGEME!
+  status:
+    name:
+    nameSingular:
+    nameEmpty:
+  admin:
+    roleIds:
+
+
 minecraft:
   image:
     repository: itzg/minecraft-server
@@ -139,4 +151,15 @@ minecraft:
     enabled: false
     failureThreshold: 30
     periodSeconds: 10
+
+  extraVolumes:
+    - volumeMounts:
+        - name: dci-config
+          mountPath: /data/config/Discord-Integration.toml
+          subPath: Discord-Integration.toml
+      volumes:
+        - name: dci-config
+          secret:
+            secretName: extra-config
+---
 

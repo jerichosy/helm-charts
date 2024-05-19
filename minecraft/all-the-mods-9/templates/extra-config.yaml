@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: extra-config
+type: Opaque
+data:
+  Discord-Integration.toml: |
+    {{ include "dci.config" . | b64enc }}
+---
+
