@@ -1,7 +1,7 @@
 dcIntegration:
   bot:
-    token: CHANGEME!
-    channel: CHANGEME!
+    token:
+    channel:
   status:
     name:
     nameSingular:
