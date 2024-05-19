@@ -191,6 +191,6 @@ minecraft:
       volumes:
         - name: dci-config
           secret:
-            secretName: extra-config
+            secretName: all-the-mods-9-extra-config
 ---
 
