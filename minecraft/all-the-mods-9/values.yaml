@@ -21,7 +21,7 @@ dcIntegration:
 
   inGame:
     # Enable the /discord command to show an custom message with invite URL?
-    enabled: true
+    enabled: false
     message: "Join our discord! https://discord.gg/myserver"
     hoverMessage: "Click to open the invite url"
     inviteUrl: "https://discord.gg/myserver"
