@@ -1,0 +1,39 @@
+abetBot:
+  discord:
+    token:
+    owners: []
+    appId:
+  dbUri:
+  saucenaoToken:
+  ytDlpMicroservice:
+  openAiApiKey:
+  googleApiKey:
+
+postgresql:
+  auth:
+    username:
+    password:
+    database:
+
+replicaCount: 1
+
+image:
+  repository: segs/abet-bot
+  pullPolicy: Always
+  tag: "latest"
+
+podAnnotations: {}
+podLabels: {}
+
+resources:
+  requests: 250m
+  memory: 512Mi
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
