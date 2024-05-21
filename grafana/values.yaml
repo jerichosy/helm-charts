@@ -12,6 +12,12 @@ grafana:
 #    nodePorts:
 #      grafana: "31765"
 
+  ingress:
+    enabled: true
+    pathType: Prefix
+    hostname: "*"
+    path: /grafana
+
   config:
     useGrafanaIniFile: true
     grafanaIniConfigMap: grafana-extra-ini
