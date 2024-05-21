@@ -1,4 +1,4 @@
-domain:
+domain: localhost
 
 grafana:
   admin:
