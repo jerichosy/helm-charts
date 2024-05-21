@@ -1,3 +1,5 @@
+domain:
+
 grafana:
   admin:
     user: jericho
