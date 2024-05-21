@@ -7,10 +7,10 @@ grafana:
     storageClass: "local-path"
     size: 1Gi
 
-  service:
-    type: NodePort
-    nodePorts:
-      grafana: "31765"
+#  service:
+#    type: NodePort
+#    nodePorts:
+#      grafana: "31765"
 
   config:
     useGrafanaIniFile: true
