@@ -4,7 +4,7 @@ dcIntegration:
     channel:
 
   admin:
-    roleIds: []
+    roleIds: [1002055509366558780]
 
   status:
     # Type of the bots status
@@ -193,4 +193,3 @@ minecraft:
           secret:
             secretName: all-the-mods-9-extra-config
 ---
-
