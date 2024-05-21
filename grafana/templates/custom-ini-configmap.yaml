@@ -4,6 +4,9 @@ metadata:
   name: grafana-extra-ini
 data:
   grafana.ini: |-
+    [server]
+    serve_from_sub_path = true
+    
     [auth.anonymous]
     enabled = true
     org_name = Main Org.
