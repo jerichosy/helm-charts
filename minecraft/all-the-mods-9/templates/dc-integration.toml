@@ -18,7 +18,7 @@
   disableParsingMentionsIngame = false
 [commands]
   enabled = true
-  adminRoleIDs = [ {{ range $index, $value := .admin.roleIds }}{{ if $index }}, {{ end }}{{ $value }}{{ end }} ]
+  adminRoleIDs = [ {{ range $index, $value := .admin.roleIds }}{{ if $index }}, {{ end }}{{ $value | quote }}{{ end }} ]
   listCmdEnabled = true
   hideListCmd = true
   uptimeCmdEnabled = true
