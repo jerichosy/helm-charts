@@ -1,12 +1,5 @@
 argo-cd:
-  global:
-    domain: localhost
-
-  certificate:
-    enabled: true
-
   server:
-    ingress:
-      enabled: true
-      ingressClassName: "traefik"
-      tls: true
+    service:
+      type: NodePort
+      nodePortHttps: 31760
