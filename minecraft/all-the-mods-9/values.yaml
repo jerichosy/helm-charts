@@ -184,13 +184,21 @@ minecraft:
     failureThreshold: 30
     periodSeconds: 10
 
-  extraVolumes:
-    - volumeMounts:
-        - name: dci-config
-          mountPath: /data/config/Discord-Integration.toml
+  initContainers:
+    - name: init-extra-config
+      image: alpine
+      command:
+        - 'sh'
+        - '-c'
+        - 'cp -f /config/* /mnt/datadir/data/config/'
+      volumeMounts:
+        - name: extra-config
+          mountPath: /config/Discord-Integration.toml
           subPath: Discord-Integration.toml
+        - name: all-the-mods-9-minecraft-datadir
+          mountPath: /mnt/datadir
       volumes:
-        - name: dci-config
+        - name: extra-config
           secret:
             secretName: all-the-mods-9-extra-config
 ---
