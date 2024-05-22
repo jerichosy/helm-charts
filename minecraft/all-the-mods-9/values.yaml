@@ -76,9 +76,7 @@ minecraft:
     spawnProtection: 16
     viewDistance: 10
     gameMode: survival
-    motd: |
-      §6[★] §4ATM 9 §lModded Communism§r§4™ §6[★]§r
-      §6-\=-\=-\= §eAll hail §aKIA §eand §cSEGS§e\! §6\=-\=-\=-
+    motd: "\\u00A76[★] \\u00A74ATM 9 \\u00A7lModded Communism\\u00A7r\\u00A74™ \\u00A76[★]\\u00A7r\\n\\u00A76-=-=-= \\u00A7eAll hail \\u00A7aKIA \\u00A7eand \\u00A7cSEGS\\u00A7e! \\u00A76=-=-=-"
     pvp: default
     levelType: DEFAULT
     worldSaveName: world
