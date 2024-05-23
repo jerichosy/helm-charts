@@ -194,11 +194,11 @@ minecraft:
       command:
         - 'sh'
         - '-c'
-        - 'cp -f /config/* /mnt/datadir/data/config/'
+        - 'cp -f /config/* /data/config/'
       volumeMounts:
         - name: extra-config
           mountPath: /config/Discord-Integration.toml
           subPath: Discord-Integration.toml
         - name: datadir
-          mountPath: /mnt/datadir
+          mountPath: /data
 ---
