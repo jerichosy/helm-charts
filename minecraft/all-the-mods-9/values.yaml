@@ -193,10 +193,13 @@ minecraft:
         - name: extra-config
           mountPath: /config/Discord-Integration.toml
           subPath: Discord-Integration.toml
-        - name: all-the-mods-9-minecraft-datadir
+        - name: datadir
           mountPath: /mnt/datadir
       volumes:
         - name: extra-config
           secret:
             secretName: all-the-mods-9-extra-config
+        - name: datadir
+          persistentVolumeClaim:
+            claimName: all-the-mods-9-minecraft-datadir
 ---
