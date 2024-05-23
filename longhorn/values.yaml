@@ -1,0 +1,8 @@
+longhorn:
+  ingress:
+    enabled: true
+    path: /longhorn
+    tls: true
+  metrics:
+    serviceMonitor:
+      enabled: true

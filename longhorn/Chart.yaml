@@ -1,0 +1,10 @@
+apiVersion: v2
+name: longhorn
+description: A SEGS Helm chart for Longhorn - a Distributed Block Storage System
+type: application
+version: 1.0.0
+appVersion: "1.16.0"
+dependencies:
+  - name: longhorn
+    version: "1.6.2"
+    repository: "https://charts.longhorn.io"
