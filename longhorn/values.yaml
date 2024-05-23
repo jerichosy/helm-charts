@@ -10,3 +10,8 @@ longhorn:
     snapshotterReplicaCount: 1
   longhornUI:
     replicas: 1
+
+  service:
+    ui:
+      type: NodePort
+      nodePort: 31761
