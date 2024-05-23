@@ -5,5 +5,6 @@ metadata:
 type: Opaque
 data:
   Discord-Integration.toml: {{ include "dci.config" . | b64enc }}
+  simplebackups-common.toml: {{ include "simplebackups.config" . | b64enc }}
 ---
 

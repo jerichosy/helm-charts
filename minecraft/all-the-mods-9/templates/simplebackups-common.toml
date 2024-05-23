@@ -1,0 +1,15 @@
+{{- define "simplebackups.config" -}}
+{{- with .Values.simplebackups -}}
+enabled = {{ .enabled }}
+backupType = {{ .backupType | quote }}
+fullBackupTimer = {{ .fullBackupTimer }}
+backupsToKeep = {{ .backupsToKeep }}
+timer = {{ .timer }}
+compressionLevel = {{ .compressionLevel }}
+sendMessages = true
+maxDiskSize = {{ .maxDiskSize }}
+outputPath = "simplebackups"
+[mod_compat]
+        mc2discord = true
+{{- end }}
+{{- end }}
