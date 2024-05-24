@@ -7,7 +7,7 @@ backupsToKeep = {{ .backupsToKeep }}
 timer = {{ .timer }}
 compressionLevel = {{ .compressionLevel }}
 sendMessages = true
-maxDiskSize = {{ .maxDiskSize }}
+maxDiskSize = {{ .maxDiskSize | quote }}
 outputPath = "simplebackups"
 [mod_compat]
         mc2discord = true
