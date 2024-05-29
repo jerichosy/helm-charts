@@ -100,7 +100,7 @@ minecraft:
     spawnMonsters: default
     spawnNPCs: default
     spawnProtection: 16
-    viewDistance: 10
+    viewDistance: 7
     gameMode: survival
     motd: "If you see this, then that means Kyoya messed up the MOTD config."
     pvp: default
@@ -174,7 +174,7 @@ minecraft:
     ENABLE_ROLLING_LOGS: true
     TZ: Asia/Manila
     LOG_TIMESTAMP: true
-    SIMULATION_DISTANCE: 6
+    SIMULATION_DISTANCE: 4
 
   persistence:
     labels: {}
