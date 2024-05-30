@@ -169,6 +169,12 @@ minecraft:
   extraEnv:
     CURSEFORGE_FILES: |
       https://www.curseforge.com/minecraft/mc-mods/prometheus-exporter/files/4694230
+      https://www.curseforge.com/minecraft/mc-mods/better-chunk-loading-forge-fabric/files/5310074
+      https://www.curseforge.com/minecraft/mc-mods/chunk-sending-forge-fabric/files/4894789
+      https://www.curseforge.com/minecraft/mc-mods/fast-async-world-save-forge-fabric/files/5218101
+      https://www.curseforge.com/minecraft/mc-mods/smooth-chunk-save/files/5138123
+      https://www.curseforge.com/minecraft/mc-mods/krypton-reforged/files/4606534
+      https://www.curseforge.com/minecraft/mc-mods/leaky/files/5340919
     ALLOW_FLIGHT: true
     USE_AIKAR_FLAGS: true
     ENABLE_ROLLING_LOGS: true
