@@ -1,4 +1,6 @@
 longhorn:
+  preUpgradeChecker:
+    jobEnabled: false
   service:
     ui:
       type: NodePort
