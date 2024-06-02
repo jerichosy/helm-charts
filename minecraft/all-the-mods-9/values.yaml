@@ -99,7 +99,7 @@ minecraft:
     maxTickTime: 60000
     spawnMonsters: default
     spawnNPCs: default
-    spawnProtection: 16
+    spawnProtection: 1
     viewDistance: 7
     gameMode: survival
     motd: "If you see this, then that means Kyoya messed up the MOTD config."
