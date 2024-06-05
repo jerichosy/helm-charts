@@ -1,6 +1,8 @@
 longhorn:
   preUpgradeChecker:
     jobEnabled: false
+  persistence:
+    defaultClassReplicaCount: 1
   service:
     ui:
       type: NodePort
