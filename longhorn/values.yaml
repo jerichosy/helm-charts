@@ -3,6 +3,7 @@ longhorn:
     jobEnabled: false
   defaultSettings:
     replicaZoneSoftAntiAffinity: true
+    replicaSoftAntiAffinity: true
   persistence:
     defaultClassReplicaCount: 1
   service:
