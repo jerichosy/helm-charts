@@ -1,0 +1,4 @@
+harbor:
+  global:
+    storageClass: longhorn-static
+  adminPassword: CHANGEME!
