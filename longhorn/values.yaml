@@ -5,7 +5,7 @@ longhorn:
     replicaZoneSoftAntiAffinity: true
     replicaSoftAntiAffinity: true
   persistence:
-    defaultClassReplicaCount: 1
+    defaultClassReplicaCount: 3
   service:
     ui:
       type: NodePort
