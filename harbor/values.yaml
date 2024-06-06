@@ -2,3 +2,7 @@ harbor:
   global:
     storageClass: longhorn
   adminPassword: CHANGEME!
+  service:
+    ports:
+      http: 31000
+      https: 31762
