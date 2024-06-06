@@ -3,6 +3,6 @@ prometheus:
     storageClass: longhorn
   server:
     service:
-      type: LoadBalancer
-      ports:
-        http: 31762
+      type: NodePort
+      nodePorts:
+        http: "31762"
