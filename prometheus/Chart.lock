@@ -1,6 +1,6 @@
 dependencies:
 - name: prometheus
-  repository: https://charts.bitnami.com/bitnami
-  version: 1.3.4
-digest: sha256:13fe558a8483206811dbb633efed81320cd33b29d81e37c1475263fc6b2efc67
-generated: "2024-06-06T15:48:34.923046908+08:00"
+  repository: https://prometheus-community.github.io/helm-charts
+  version: 25.21.0
+digest: sha256:59945dd47df112505b5e021b42250a2ae0c182b29d78b9422ce3cc94fdf8f940
+generated: "2024-06-06T18:17:36.382071921+08:00"
