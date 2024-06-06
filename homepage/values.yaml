@@ -22,7 +22,11 @@ homepage:
           - Grafana:
               icon: grafana.png
               href: 'https://172.25.85.182/grafana/'
-              description: Monitoring dashboard
+              description: Metric visualization and monitoring dashboard
+          - Prometheus:
+              icon: prometheus.png
+              href: 'http://172.25.85.182:31765'
+              description: Systems monitoring and alerting toolkit
 
       - Management:
           - Longhorn:
