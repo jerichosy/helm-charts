@@ -25,7 +25,7 @@ homepage:
               description: Monitoring dashboard
           - Prometheus:
               icon: prometheus.png
-              href: 'http://localhost'
+              href: 'http://172.25.85.182:31762'
               description: Metrics scraper
 
       - Management:
