@@ -8,6 +8,7 @@ gitea:
     email: admin@segs.local
   persistence:
     enabled: true
+    storageClass: longhorn
   metrics:
     enabled: true
   service:
