@@ -1,69 +1,76 @@
 homepage:
   config:
-      bookmarks:
-          - Developer:
-                - SEGS Helm Charts:
-                      - abbr: SEGS-GH
-                        href: https://github.com/jerichosy/helm-charts
-      services:
-          - GitOps:
-                - ArgoCD:
-                      href: https://172.25.85.182:31760
-                      description: CI/CD GitOps delivery tool
-                - Gitlab:
-                      href: http://localhost
-                      description: Code repository and CI/CD pipeline
+    bookmarks:
+      - Developer:
+          - SEGS Helm Charts:
+              - abbr: SEGS-GH
+                href: 'https://github.com/jerichosy/helm-charts'
+                icon: github.png
 
-          - Monitoring:
-                - Grafana:
-                      href: https://172.25.85.182/grafana/
-                      description: Monitoring dashboard
-                - Prometheus:
-                      href: http://localhost
-                      description: Metrics scraper
+    services:
+      - GitOps:
+          - ArgoCD:
+              icon: argocd.png
+              href: 'https://172.25.85.182:31760'
+              description: CI/CD GitOps delivery tool
+          - Gitlab:
+              icon: gitlab.png
+              href: 'http://localhost'
+              description: Code repository and CI/CD pipeline
 
-          - Management:
-                - Longhorn:
-                      href: http://172.25.85.182:31761
-                      description: Distributed block storage system for Kubernetes
-                - Harbor:
-                      href: https://172.25.85.182:32548
-                      description: Artifact and image registry
+      - Monitoring:
+          - Grafana:
+              icon: grafana.png
+              href: 'https://172.25.85.182/grafana/'
+              description: Monitoring dashboard
+          - Prometheus:
+              icon: prometheus.png
+              href: 'http://localhost'
+              description: Metrics scraper
 
-      widgets:
-          # show the kubernetes widget, with the cluster summary and individual nodes
-          - kubernetes:
-                cluster:
-                    show: true
-                    cpu: true
-                    memory: true
-                    showLabel: true
-                    label: "cluster"
-                nodes:
-                    show: true
-                    cpu: true
-                    memory: true
-                    showLabel: true
-          - search:
-                provider: duckduckgo
-                target: _blank
-      kubernetes:
-          mode: cluster
-      settings:
+      - Management:
+          - Longhorn:
+              icon: longhorn.png
+              href: 'http://172.25.85.182:31761'
+              description: Distributed block storage system for Kubernetes
+          - Harbor:
+              icon: harbor.png
+              href: 'https://172.25.85.182:32548'
+              description: Artifact and image registry
 
-  # The service account is necessary to allow discovery of other services
+    widgets:
+      - kubernetes:
+          cluster:
+            show: true
+            cpu: true
+            memory: true
+            showLabel: true
+            label: cluster
+          nodes:
+            show: true
+            cpu: true
+            memory: true
+            showLabel: true
+      - search:
+          provider: duckduckgo
+          target: _blank
+
+    kubernetes:
+      mode: cluster
+
+    settings: null
+
   serviceAccount:
-      create: true
-      name: homepage
+    create: true
+    name: homepage
 
-  # This enables the service account to access the necessary resources
   enableRbac: true
 
   ingress:
-      main:
-          enabled: true
-          hosts:
-              - host: 172.25.85.182.sslip.io
-                paths:
-                    - path: /
-                      pathType: Prefix
+    main:
+      enabled: true
+      hosts:
+        - host: 172.25.85.182.sslip.io
+          paths:
+            - path: /
+              pathType: Prefix
