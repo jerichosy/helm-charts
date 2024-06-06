@@ -1,0 +1,8 @@
+prometheus:
+  global:
+    storageClass: longhorn
+  server:
+    service:
+      type: LoadBalancer
+      ports:
+        http: 31762
