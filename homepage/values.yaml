@@ -70,6 +70,7 @@ homepage:
               gethomepage.dev/group: "Dynamic"
               gethomepage.dev/icon: "homepage.png"
           hosts:
-              - paths:
+              - host: "*"
+                paths:
                     - path: /
                       pathType: Prefix
