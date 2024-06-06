@@ -70,7 +70,7 @@ homepage:
               gethomepage.dev/group: "Dynamic"
               gethomepage.dev/icon: "homepage.png"
           hosts:
-              - host: 172.25.85.182
+              - host: 172.25.85.182.sslip.io
                 paths:
                     - path: /
                       pathType: Prefix
