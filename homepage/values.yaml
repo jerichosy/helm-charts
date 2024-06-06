@@ -13,9 +13,9 @@ homepage:
               icon: argocd.png
               href: 'https://172.25.85.182:31760'
               description: CI/CD GitOps delivery tool
-          - Gitlab:
-              icon: gitlab.png
-              href: 'http://localhost'
+          - Gitea:
+              icon: gitea.png
+              href: 'http://172.25.85.182.31763'
               description: Code repository and CI/CD pipeline
 
       - Monitoring:
