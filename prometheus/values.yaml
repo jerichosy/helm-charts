@@ -1,6 +1,9 @@
 prometheus:
   global:
     storageClass: longhorn
+  alertmanager:
+    service:
+      type: NodePort
   server:
     service:
       type: NodePort
