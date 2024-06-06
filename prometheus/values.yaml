@@ -4,8 +4,12 @@ prometheus:
   alertmanager:
     service:
       type: NodePort
+    persistence:
+      enabled: true
   server:
     service:
       type: NodePort
       nodePorts:
         http: "31762"
+    persistence:
+      enabled: true
