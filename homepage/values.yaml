@@ -31,7 +31,7 @@ homepage:
               description: Distributed block storage system for Kubernetes
           - Harbor:
               icon: harbor.png
-              href: 'https://172.25.85.182:32548'
+              href: 'https://172.25.85.182:31762'
               description: Artifact and image registry
 
     widgets:
