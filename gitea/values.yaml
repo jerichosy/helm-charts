@@ -1,0 +1,22 @@
+gitea:
+  config:
+    server:
+     ENABLE_PPROF: true
+  admin:
+    username: admin
+    password: CHANGEME!
+    email: admin@segs.local
+  persistence:
+    enabled: true
+  metrics:
+    enabled: true
+  service:
+    http:
+      type: LoadBalancer
+      port: 31763
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "31763"
+    ssh:
+      type: LoadBalancer
+      port: 31764
