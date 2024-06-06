@@ -15,7 +15,7 @@ homepage:
               description: CI/CD GitOps delivery tool
           - Gitea:
               icon: gitea.png
-              href: 'http://172.25.85.182.31763'
+              href: 'http://172.25.85.182:31763'
               description: Code repository and CI/CD pipeline
 
       - Monitoring:
