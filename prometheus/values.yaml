@@ -4,6 +4,10 @@ prometheus:
   alertmanager:
     persistence:
       enabled: true
+    service:
+      type: ClusterIP
   server:
     persistence:
       enabled: true
+    service:
+      type: ClusterIP
