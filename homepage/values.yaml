@@ -1,0 +1,75 @@
+homepage:
+  config:
+      bookmarks:
+          - Developer:
+                - SEGS Helm Charts:
+                      - abbr: SEGS-GH
+                        href: https://github.com/jerichosy/helm-charts
+      services:
+          - GitOps:
+                - ArgoCD:
+                      href: https://172.25.85.182:31760
+                      description: CI/CD GitOps delivery tool
+                - Gitlab:
+                      href: http://localhost
+                      description: Code repository and CI/CD pipeline
+
+          - Monitoring:
+                - Grafana:
+                      href: https://172.25.85.182/grafana/
+                      description: Monitoring dashboard
+                - Prometheus:
+                      href: http://localhost
+                      description: Metrics scraper
+
+          - Management:
+                - Longhorn:
+                      href: http://172.25.85.182:31761
+                      description: Distributed block storage system for Kubernetes
+                - Harbor:
+                      href: https://172.25.85.182:32548
+                      description: Artifact and image registry
+
+      widgets:
+          # show the kubernetes widget, with the cluster summary and individual nodes
+          - kubernetes:
+                cluster:
+                    show: true
+                    cpu: true
+                    memory: true
+                    showLabel: true
+                    label: "cluster"
+                nodes:
+                    show: true
+                    cpu: true
+                    memory: true
+                    showLabel: true
+          - search:
+                provider: duckduckgo
+                target: _blank
+      kubernetes:
+          mode: cluster
+      settings:
+
+  # The service account is necessary to allow discovery of other services
+  serviceAccount:
+      create: true
+      name: homepage
+
+  # This enables the service account to access the necessary resources
+  enableRbac: true
+
+  ingress:
+      main:
+          enabled: true
+          annotations:
+              # Example annotations to add Homepage to your Homepage!
+              gethomepage.dev/enabled: "true"
+              gethomepage.dev/name: "Homepage"
+              gethomepage.dev/description: "Dynamically Detected Homepage"
+              gethomepage.dev/group: "Dynamic"
+              gethomepage.dev/icon: "homepage.png"
+          hosts:
+              - paths:
+                    - path: /
+                      pathType: Prefix
