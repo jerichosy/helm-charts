@@ -23,10 +23,6 @@ homepage:
               icon: grafana.png
               href: 'https://172.25.85.182/grafana/'
               description: Monitoring dashboard
-          - Prometheus:
-              icon: prometheus.png
-              href: 'http://172.25.85.182:31762'
-              description: Metrics scraper
 
       - Management:
           - Longhorn:
