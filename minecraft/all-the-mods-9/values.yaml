@@ -27,7 +27,7 @@ simplebackups:
 dcIntegration:
   bot:
     token:
-    channel:
+    channel: "923633988168478720"
 
   admin:
     roleIds: ["1002055509366558780"]
@@ -41,7 +41,7 @@ dcIntegration:
     # %max% - Maximum Player Amount
     name: "%online% players online"
     nameSingular: "%online% player online"
-    nameEmpty: "No-one is online"
+    nameEmpty: "No one is online"
     # URL of the bots stream when using the status type 'STREAMING'
     streamUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
@@ -54,7 +54,7 @@ dcIntegration:
 
   log:
     # Channel ID for the command log channel, leave 0 to disable
-    channel: "0"
+    channel: "923636466943418409"
     # PLACEHOLDERS:
     # %sender% - The name of the Command Source
     # %cmd% - executed command (e.g. "say Hello World"
@@ -175,6 +175,9 @@ minecraft:
       https://www.curseforge.com/minecraft/mc-mods/smooth-chunk-save/files/5138123
       https://www.curseforge.com/minecraft/mc-mods/krypton-reforged/files/4606534
       https://www.curseforge.com/minecraft/mc-mods/leaky/files/5340919
+    MODS: |
+      https://github.com/ErdbeerbaerLP/DiscordIntegration-Addon-Repository/blob/master/_Releases/DiscordIntegration-VoiceNotifications-1.1.0.jar
+      https://github.com/ErdbeerbaerLP/DiscordIntegration-Addon-Repository/blob/master/_Releases/DiscordIntegration-ExecuteCommand-1.1.0.jar
     ALLOW_FLIGHT: true
     USE_AIKAR_FLAGS: true
     ENABLE_ROLLING_LOGS: true
@@ -241,4 +244,3 @@ minecraft:
         - name: datadir
           mountPath: /data
 ---
-

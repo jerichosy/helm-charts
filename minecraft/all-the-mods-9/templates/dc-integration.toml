@@ -74,7 +74,7 @@ args = [    ]
   enableHoverMessage = true
 charBlacklist = [  "࿕", "࿖"  ]
 [embedMode]
-  enabled = false
+  enabled = true
 
     [embedMode.startMessages]
       asEmbed = true
@@ -108,7 +108,7 @@ charBlacklist = [  "࿕", "࿖"  ]
 
     [embedMode.chatMessages]
       generateUniqueColors = true
-      asEmbed = true
+      asEmbed = false
       colorHexCode = "#808080"
       customJSON = ""
 [advanced]
