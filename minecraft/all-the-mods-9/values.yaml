@@ -176,8 +176,8 @@ minecraft:
       https://www.curseforge.com/minecraft/mc-mods/krypton-reforged/files/4606534
       https://www.curseforge.com/minecraft/mc-mods/leaky/files/5340919
     MODS: |
-      https://github.com/ErdbeerbaerLP/DiscordIntegration-Addon-Repository/blob/master/_Releases/DiscordIntegration-VoiceNotifications-1.1.0.jar
-      https://github.com/ErdbeerbaerLP/DiscordIntegration-Addon-Repository/blob/master/_Releases/DiscordIntegration-ExecuteCommand-1.1.0.jar
+      https://github.com/ErdbeerbaerLP/DiscordIntegration-Addon-Repository/raw/master/_Releases/DiscordIntegration-VoiceNotifications-1.1.0.jar
+      https://github.com/ErdbeerbaerLP/DiscordIntegration-Addon-Repository/raw/master/_Releases/DiscordIntegration-ExecuteCommand-1.1.0.jar
     ALLOW_FLIGHT: true
     USE_AIKAR_FLAGS: true
     ENABLE_ROLLING_LOGS: true
