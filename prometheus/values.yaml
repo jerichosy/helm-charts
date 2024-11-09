@@ -2,4 +2,4 @@ prometheus:
   server:
     service:
       type: LoadBalancer
-      servicePort: 31765
+      servicePort: 32603
