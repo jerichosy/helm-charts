@@ -1,25 +1,7 @@
-domain: localhost
-
 grafana:
   admin:
-    user: jericho
-    password: "CHANGEME"
-
-  persistence:
-    storageClass: "local-path"
-    size: 1Gi
-
-#  service:
-#    type: NodePort
-#    nodePorts:
-#      grafana: "31765"
-
-  ingress:
-    enabled: true
-    pathType: Prefix
-    hostname: "*"
-    path: /grafana
-
+    user: admin
+    password: CHANGEME
   config:
     useGrafanaIniFile: true
     grafanaIniConfigMap: grafana-extra-ini

@@ -4,11 +4,6 @@ metadata:
   name: grafana-extra-ini
 data:
   grafana.ini: |-
-    [server]
-    domain = {{ .Values.domain }}
-    root_url = %(protocol)s://%(domain)s:%(http_port)s/grafana/
-    serve_from_sub_path = true
-    
     [auth.anonymous]
     enabled = true
     org_name = Main Org.
