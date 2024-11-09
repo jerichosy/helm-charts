@@ -8,4 +8,4 @@ grafana:
   service:
     type: LoadBalancer
     ports:
-      grafana: 32603
+      grafana: 32604
