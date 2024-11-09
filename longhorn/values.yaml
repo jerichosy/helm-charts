@@ -5,8 +5,9 @@ longhorn:
     replicaZoneSoftAntiAffinity: true
     replicaSoftAntiAffinity: true
   persistence:
-    defaultClassReplicaCount: 1
+    defaultClassReplicaCount: 3
+    defaultDataLocality: best-effort
   service:
     ui:
       type: NodePort
-      nodePort: 31761
+      nodePort: 32602
