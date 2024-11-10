@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "pterodactyl-panel.fullname" . }}
+data:
+  APP_ENV: {{ .Values.panel.app.env }}
+  APP_ENVIRONMENT_ONLY: {{ .Values.panel.app.envOnly | quote }}
+  APP_SERVICE_AUTHOR: {{ .Values.panel.app.service.author }}
+  APP_TIMEZONE: {{ .Values.panel.app.tz }}
+  APP_URL: {{ .Values.panel.app.url }}
+  CACHE_DRIVER: {{ .Values.panel.cache.driver }}
+  MAIL_DRIVER: {{ .Values.panel.mail.driver }}
+  MAIL_ENCRYPTION: {{ .Values.panel.mail.encryption | quote }}
+  QUEUE_DRIVER: {{ .Values.panel.queue.driver }}
+  SESSION_DRIVER: {{ .Values.panel.session.driver }}

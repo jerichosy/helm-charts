@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "pterodactyl-panel.fullname" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      io.kompose.service: panel
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+    spec:
+      containers:
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+        - name: {{ .Chart.Name }}
+          ports:
+            - containerPort: 80
+              protocol: TCP
+            - containerPort: 443
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /app/var
+              name: panel-claim
+            - mountPath: /etc/nginx/http.d
+              name: panel-claim
+            - mountPath: /etc/letsencrypt
+              name: panel-claim
+            - mountPath: /app/storage/logs
+              name: panel-claim
+            envFrom:
+              - secretKeyRef:
+                  name: {{ include "pterodactyl-panel.fullname" . }}
+              - configMapRef:
+                  name: {{ include "pterodactyl-panel.fullname" . }}
+            readinessProbe:
+              tcpSocket:
+                port: 443
+              initialDelaySeconds: 15
+              periodSeconds: 10
+            livenessProbe:
+              tcpSocket:
+                port: 443
+              initialDelaySeconds: 15
+              periodSeconds: 10
+      restartPolicy: Always
+      volumes:
+        - name: panel-claim
+          persistentVolumeClaim:
+            claimName: {{ include "pterodactyl-panel.fullname" . }}

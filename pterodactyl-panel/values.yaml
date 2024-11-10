@@ -1,0 +1,48 @@
+replicaCount: 2
+
+image:
+  repository: ghcr.io/pterodactyl/panel
+  pullPolicy: IfNotPresent
+  tag: ""
+
+service:
+  type: LoadBalancer
+  port: 32605
+
+persistence:
+  size: 10Gi
+
+panel:
+  app:
+    service:
+      author: noreply@example.com
+    env: production
+    envOnly: false
+    tz: UTC
+    url: http://example.com
+  mail:
+    driver: smtp
+    encryption: true
+    host: mail
+    from: noreply@example.com
+    port: 1025
+    username: username
+    password: CHANGEME!
+  redis:
+    host: cache
+  queue:
+    driver: redis
+  session:
+    driver: redis
+  cache:
+    driver: redis
+
+mysql:
+  auth:
+    username: pterodactyl
+    password: CHANGME!
+    database: panel
+    createDatabase: true
+  primary:
+    containerPorts:
+      mysql: 3306
