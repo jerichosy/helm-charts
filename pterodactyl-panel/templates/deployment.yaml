@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "pterodactyl-panel.fullname" . }}
+  labels:
+    {{- include "pterodactyl-panel.labels" . | nindent 4 }}
 spec:
   replicas: 1
   selector:
@@ -11,15 +13,14 @@ spec:
     type: Recreate
   template:
     metadata:
+    metadata:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
         checksum/secrets: {{ include (print $.Template.BasePath "/secrets.yaml") . | sha256sum }}
       labels:
         {{- include "pterodactyl-panel.labels" . | nindent 8 }}
-        {{- with .Values.podLabels }}
-        {{- toYaml . | nindent 8 }}
-        {{- end }}
     spec:
+      serviceAccountName: {{ include "pterodactyl-panel.serviceAccountName" . }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
@@ -30,12 +31,6 @@ spec:
               protocol: TCP
           volumeMounts:
             - mountPath: /app/var
-              name: panel-claim
-            - mountPath: /etc/nginx/http.d
-              name: panel-claim
-            - mountPath: /etc/letsencrypt
-              name: panel-claim
-            - mountPath: /app/storage/logs
               name: panel-claim
           envFrom:
             - secretRef:

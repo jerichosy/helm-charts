@@ -10,6 +10,10 @@ service:
 persistence:
   size: 10Gi
 
+serviceAccount:
+  create: true
+  annotations: {}
+
 panel:
   app:
     service:
