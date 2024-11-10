@@ -4,9 +4,6 @@ metadata:
   name: {{ include "pterodactyl-panel.fullname" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
-  selector:
-    matchLabels:
-      io.kompose.service: panel
   strategy:
     type: RollingUpdate
   template:
