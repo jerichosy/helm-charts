@@ -29,7 +29,7 @@ panel:
     username: username
     password: CHANGEME!
   redis:
-    host: redis.pterodactyl
+    host: redis-master.pterodactyl
   mysql:
     host: mysql.pterodactyl
   queue:
@@ -51,6 +51,7 @@ mysql:
         mysql: 3306
 
 redis:
+  architecture: standalone
   auth:
     password: CHANGEME!
   master:

@@ -13,9 +13,9 @@ spec:
     metadata:
     spec:
       containers:
+        - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-        - name: {{ .Chart.Name }}
           ports:
             - containerPort: 80
               protocol: TCP
@@ -30,21 +30,21 @@ spec:
               name: panel-claim
             - mountPath: /app/storage/logs
               name: panel-claim
-            envFrom:
-              - secretKeyRef:
-                  name: {{ include "pterodactyl-panel.fullname" . }}
-              - configMapRef:
-                  name: {{ include "pterodactyl-panel.fullname" . }}
-            readinessProbe:
-              tcpSocket:
-                port: 443
-              initialDelaySeconds: 15
-              periodSeconds: 10
-            livenessProbe:
-              tcpSocket:
-                port: 443
-              initialDelaySeconds: 15
-              periodSeconds: 10
+          envFrom:
+            - secretKeyRef:
+                name: {{ include "pterodactyl-panel.fullname" . }}
+            - configMapRef:
+                name: {{ include "pterodactyl-panel.fullname" . }}
+          readinessProbe:
+            tcpSocket:
+              port: 443
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: 443
+            initialDelaySeconds: 15
+            periodSeconds: 10
       restartPolicy: Always
       volumes:
         - name: panel-claim
