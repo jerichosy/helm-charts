@@ -27,7 +27,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: {{ .Values.service.port }}
               protocol: TCP
           volumeMounts:
             - mountPath: /app/var
@@ -45,12 +45,6 @@ spec:
             httpGet:
               path: /
               port: http
-            httpGet:
-              path: /
-              port: 443
-              scheme: HTTPS
-            initialDelaySeconds: 15
-            periodSeconds: 10
       restartPolicy: Always
       volumes:
         - name: panel-claim
