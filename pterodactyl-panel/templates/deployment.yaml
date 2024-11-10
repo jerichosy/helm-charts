@@ -4,6 +4,9 @@ metadata:
   name: {{ include "pterodactyl-panel.fullname" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "pterodactyl-panel.selectorLabels" . | nindent 6 }}
   strategy:
     type: RollingUpdate
   template:
