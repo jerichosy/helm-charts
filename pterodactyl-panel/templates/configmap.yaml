@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   name: {{ include "pterodactyl-panel.fullname" . }}-configmap
 data:
+  DB_HOST: {{ .Release.Name }}-mariadb
+  REDIS_HOST: {{ .Release.Name }}-redis-master
   APP_ENV: {{ .Values.panel.app.env }}
   APP_ENVIRONMENT_ONLY: {{ .Values.panel.app.envOnly | quote }}
   APP_SERVICE_AUTHOR: {{ .Values.panel.app.service.author }}
