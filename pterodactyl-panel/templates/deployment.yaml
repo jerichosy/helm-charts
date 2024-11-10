@@ -57,6 +57,11 @@ spec:
               mountPath: /etc/letsencrypt
             - name: pterodactyl-pvc
               mountPath: /app/storage/logs
+          envFrom:
+            - secretRef:
+                name: {{ include "pterodactyl-panel.fullname" . }}-secrets
+            - configMapRef:
+                name: {{ include "pterodactyl-panel.fullname" . }}-configmap
       volumes:
         - name: pterodactyl-pvc
           persistentVolumeClaim:
