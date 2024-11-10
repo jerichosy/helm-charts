@@ -34,7 +34,7 @@ spec:
             - mountPath: /app/storage/logs
               name: panel-claim
           envFrom:
-            - secretKeyRef:
+            - secretRef:
                 name: {{ include "pterodactyl-panel.fullname" . }}-secrets
             - configMapRef:
                 name: {{ include "pterodactyl-panel.fullname" . }}-configmap
