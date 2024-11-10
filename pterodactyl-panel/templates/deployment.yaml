@@ -25,9 +25,8 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - containerPort: 80
-              protocol: TCP
-            - containerPort: 443
+            - name: http
+              containerPort: 80
               protocol: TCP
           volumeMounts:
             - mountPath: /app/var
@@ -43,14 +42,14 @@ spec:
                 name: {{ include "pterodactyl-panel.fullname" . }}-secrets
             - configMapRef:
                 name: {{ include "pterodactyl-panel.fullname" . }}-configmap
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
           readinessProbe:
             httpGet:
               path: /
-              port: 443
-              scheme: HTTPS
-            initialDelaySeconds: 3
-            periodSeconds: 3
-          livenessProbe:
+              port: http
             httpGet:
               path: /
               port: 443
