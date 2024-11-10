@@ -57,38 +57,9 @@ spec:
               mountPath: /etc/letsencrypt
             - name: pterodactyl-pvc
               mountPath: /app/storage/logs
-          env:
-            - name: DB_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "pterodactyl-panel.fullname" . }}-secrets
-                  key: DB_USERNAME
-            - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "pterodactyl-panel.fullname" . }}-secrets
-                  key: DB_PASSWORD
-            - name: DB_DATABASE
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "pterodactyl-panel.fullname" . }}-secrets
-                  key: DB_DATABASE
-            - name: MAIL_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "pterodactyl-panel.fullname" . }}-secrets
-                  key: MAIL_USERNAME
-            - name: MAIL_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "pterodactyl-panel.fullname" . }}-secrets
-                  key: MAIL_PASSWORD
-            - name: REDIS_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "pterodactyl-panel.fullname" . }}-secrets
-                  key: REDIS_PASSWORD
           envFrom:
+            - secretRef:
+                name: {{ include "pterodactyl-panel.fullname" . }}-secrets
             - configMapRef:
                 name: {{ include "pterodactyl-panel.fullname" . }}-configmap
       volumes:
