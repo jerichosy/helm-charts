@@ -8,7 +8,7 @@ spec:
     matchLabels:
       {{- include "pterodactyl-panel.selectorLabels" . | nindent 6 }}
   strategy:
-    type: RollingUpdate
+    type: Recreate
   template:
     metadata:
       annotations:
