@@ -4,7 +4,12 @@ metadata:
   name: {{ include "pterodactyl-panel.fullname" . }}-configmap
 data:
   DB_HOST: {{ .Release.Name }}-mariadb
+  DB_PORT: {{ .Values.mariadb.primary.service.ports.mysql | quote }}
   REDIS_HOST: {{ .Release.Name }}-redis-master
+  REDIS_PORT: {{ .Values.redis.master.service.ports }}
+  MAIL_FROM: {{ .Values.panel.mail.from }}
+  MAIL_HOST: {{ .Values.panel.mail.host }}
+  MAIL_PORT: {{ .Values.panel.mail.port | quote }}
   APP_ENV: {{ .Values.panel.app.env }}
   APP_ENVIRONMENT_ONLY: {{ .Values.panel.app.envOnly | quote }}
   APP_SERVICE_AUTHOR: {{ .Values.panel.app.service.author }}
