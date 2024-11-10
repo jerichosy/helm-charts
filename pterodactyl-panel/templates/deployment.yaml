@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "pterodactyl-panel.fullname" . }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: 1
   selector:
     matchLabels:
       {{- include "pterodactyl-panel.selectorLabels" . | nindent 6 }}
