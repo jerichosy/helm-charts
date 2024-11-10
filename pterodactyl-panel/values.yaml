@@ -3,8 +3,8 @@ panel:
     service:
       author: noreply@example.com
     env: production
-    envOnly: true
-    tz: UTC
+    envOnly: false
+    tz: Asia/Manila
     url: http://example.com
   mail:
     driver: smtp
