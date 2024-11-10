@@ -29,9 +29,9 @@ panel:
     username: username
     password: CHANGEME!
   redis:
-    host: redis-master.pterodactyl
+    host: redis-master
   mysql:
-    host: mysql.pterodactyl
+    host: mysql
   queue:
     driver: redis
   session:
