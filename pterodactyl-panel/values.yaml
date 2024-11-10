@@ -29,7 +29,9 @@ panel:
     username: username
     password: CHANGEME!
   redis:
-    host: cache
+    host: redis.pterodactyl
+  mysql:
+    host: mysql.pterodactyl
   queue:
     driver: redis
   session:
@@ -44,5 +46,14 @@ mysql:
     database: panel
     createDatabase: true
   primary:
-    containerPorts:
-      mysql: 3306
+    service:
+      ports:
+        mysql: 3306
+
+redis:
+  auth:
+    password: CHANGEME!
+  master:
+    service:
+      ports:
+        redis: 6379
