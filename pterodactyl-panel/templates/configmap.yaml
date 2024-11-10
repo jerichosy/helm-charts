@@ -13,3 +13,4 @@ data:
   MAIL_ENCRYPTION: {{ .Values.panel.mail.encryption | quote }}
   QUEUE_DRIVER: {{ .Values.panel.queue.driver }}
   SESSION_DRIVER: {{ .Values.panel.session.driver }}
+  TRUSTED_PROXIES: {{ .Values.panel.proxy.trustedHosts | quote }}

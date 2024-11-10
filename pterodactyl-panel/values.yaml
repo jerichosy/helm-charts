@@ -26,6 +26,8 @@ panel:
     port: 1025
     username: username
     password: CHANGEME!
+  proxy:
+    trustedHosts: ""
   redis:
     host: redis-master
   mysql:
