@@ -37,12 +37,11 @@ panel:
   cache:
     driver: redis
 
-mysql:
+mariadb:
   auth:
     username: pterodactyl
     password: CHANGME!
     database: panel
-    createDatabase: true
   primary:
     service:
       ports:
