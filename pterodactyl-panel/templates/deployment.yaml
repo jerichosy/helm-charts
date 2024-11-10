@@ -43,24 +43,20 @@ spec:
                 name: {{ include "pterodactyl-panel.fullname" . }}-secrets
             - configMapRef:
                 name: {{ include "pterodactyl-panel.fullname" . }}-configmap
-          args:
-            - /bin/sh
-            - -c
-            - touch /tmp/healthy
           readinessProbe:
-            exec:
-              command:
-              - cat
-              - /tmp/healthy
-            initialDelaySeconds: 5
-            periodSeconds: 5
+            httpGet:
+              path: /
+              port: 443
+              scheme: HTTPS
+            initialDelaySeconds: 3
+            periodSeconds: 3
           livenessProbe:
-            exec:
-              command:
-              - cat
-              - /tmp/healthy
-            initialDelaySeconds: 5
-      periodSeconds: 5
+            httpGet:
+              path: /
+              port: 443
+              scheme: HTTPS
+            initialDelaySeconds: 15
+            periodSeconds: 10
       restartPolicy: Always
       volumes:
         - name: panel-claim
