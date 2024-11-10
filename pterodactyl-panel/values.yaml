@@ -15,7 +15,7 @@ panel:
     service:
       author: noreply@example.com
     env: production
-    envOnly: false
+    envOnly: true
     tz: UTC
     url: http://example.com
   mail:
