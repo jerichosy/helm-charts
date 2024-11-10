@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "pterodactyl-panel.fullname" . }}
+  name: {{ include "pterodactyl-panel.fullname" . }}-service
   labels:
     {{- include "pterodactyl-panel.labels" . | nindent 4 }}
 spec:
