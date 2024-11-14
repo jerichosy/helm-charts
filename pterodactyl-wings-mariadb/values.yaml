@@ -6,7 +6,7 @@ mariadb-galera:
   service:
     type: LoadBalancer
     nodePorts:
-      mysql: 33060
+      mysql: 30060
 
   persistence:
     size: 8Gi
