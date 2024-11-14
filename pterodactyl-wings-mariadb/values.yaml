@@ -1,6 +1,5 @@
 mariadb-galera:
   rootUser:
-    user: pterodactyl-wings
     password: CHANGEME!
 
   service:
