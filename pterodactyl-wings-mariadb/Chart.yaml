@@ -1,0 +1,10 @@
+apiVersion: v2
+name: pterodactyl-panel
+description: A SEGS Helm chart for Pterodactyl Wings Shared Database
+type: application
+version: 1.0.0
+appVersion: "14.0.12"
+dependencies:
+  - name: mariadb-galera
+    version: "14.0.12"
+    repository: https://charts.bitnami.com/bitnami

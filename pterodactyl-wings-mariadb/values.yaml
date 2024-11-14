@@ -1,0 +1,12 @@
+mariadb-galera:
+  rootUser:
+    user: pterodactyl-wings
+    password: CHANGEME!
+
+  service:
+    type: LoadBalancer
+    nodePorts:
+      mysql: 33060
+
+  persistence:
+    size: 8Gi
