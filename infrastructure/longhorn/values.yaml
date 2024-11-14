@@ -1,12 +1,15 @@
 longhorn:
   preUpgradeChecker:
     jobEnabled: false
+
   defaultSettings:
     replicaZoneSoftAntiAffinity: true
     replicaSoftAntiAffinity: true
+
   persistence:
     defaultClassReplicaCount: 3
     defaultDataLocality: best-effort
+
   service:
     ui:
       type: NodePort
