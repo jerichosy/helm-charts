@@ -3,6 +3,5 @@ kind: ConfigMap
 metadata:
   name: {{ include "searxng.fullname" . }}-configmap
 data:
-  SEARXNG_BASE_URL: {{ .Values.searxng.url | quote }}
   UWSGI_THREADS: {{ .Values.searxng.uwsgi.threads | quote }}
   UWSGI_WORKERS: {{ .Values.searxng.uwsgi.workers | quote }}

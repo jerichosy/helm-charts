@@ -1,5 +1,4 @@
 searxng:
-  url: example.com
   secretkey: CHANGEME!
   redis:
     hostname: valkey
