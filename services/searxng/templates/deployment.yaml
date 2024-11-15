@@ -66,7 +66,7 @@ spec:
             claimName: "{{ include "searxng.fullname" . }}-data"
         - name: settings-yaml-secret
           secret:
-            secretName: "{{ include "searxng.fullname" . }}-settings"
+            secretName: "{{ include "searxng.fullname" . }}-settings-secret"
             items:
               - key: settings.yml
                 path: settings.yml
