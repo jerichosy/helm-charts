@@ -16,10 +16,6 @@ panel:
     password: CHANGEME!
   proxy:
     trustedHosts: ""
-  redis:
-    host: redis-master
-  mysql:
-    host: mysql
   queue:
     driver: redis
   session:
