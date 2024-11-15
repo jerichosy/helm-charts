@@ -7,3 +7,4 @@ metadata:
     kubernetes.io/service-account.name: {{ include "searxng.serviceAccountName" .}}
 data:
   settings.yml: {{ tpl ( .Files.Get "files/settings.yml" ) . | b64enc }}
+  limiter.toml: {{ tpl ( .Files.Get "files/limiter.toml" ) . | b64enc }}

@@ -70,6 +70,8 @@ spec:
             items:
               - key: settings.yml
                 path: settings.yml
+              - key: limiter.toml
+                path: limiter.toml
         {{- toYaml . | nindent 8 }}
       {{- end }}
       {{- with .Values.nodeSelector }}
