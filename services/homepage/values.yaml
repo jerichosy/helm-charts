@@ -1,7 +1,7 @@
 homepage:
   config:
     bookmarks:
-      - Developer:
+      - Development:
           - SEGS Feature Tracker:
               - abbr: SEGS-Tracker
                 href: 'https://github.com/users/jerichosy/projects/3'
@@ -11,12 +11,32 @@ homepage:
                 href: 'https://github.com/jerichosy/helm-charts'
                 icon: github.png
 
+      - Cloud:
+          - DigitalOcean:
+              - abbr: DO
+                href: 'https://cloud.digitalocean.com'
+                icon: digital-ocean.png
+          - Cloudflare:
+              - abbr: CF
+                href: 'https://dash.cloudflare.com'
+                icon: cloudflare.png
+
+      - Registry:
+          - Docker Hub:
+              - abbr: DH
+                href: 'https://hub.docker.com/'
+                icon: docker.png
+          - Artifact Hub:
+              - abbr: AH
+                href: 'https://artifacthub.io/'
+                icon: artifacthub.png
+
     services:
       - Services:
           - SEGS Game Center:
               icon: pterodactyl.png
               href: 'https://gameserver.zenyoung.dev'
-              description: Game server management panel hosted with Pterodactyl
+              description: Game server management panel using Pterodactyl
 
       - CI/CD:
           - ArgoCD:
