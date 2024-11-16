@@ -14,9 +14,9 @@ homepage:
     services:
       - Services:
           - SEGS Game Center:
-            icon: pterodactyl.png
-            href: 'https://gameserver.zenyoung.dev'
-            description: Game server management panel hosted with Pterodactyl
+              icon: pterodactyl.png
+              href: 'https://gameserver.zenyoung.dev'
+              description: Game server management panel hosted with Pterodactyl
 
       - CI/CD:
           - ArgoCD:
