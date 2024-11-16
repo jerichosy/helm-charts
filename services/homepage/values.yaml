@@ -9,10 +9,10 @@ homepage:
 
     services:
       - Services:
-          - Game Server:
+          - SEGS Game Center:
             icon: pterodactyl.png
             href: 'https://gameserver.zenyoung.dev'
-            description: Game server panel hosted with Pterodactyl
+            description: Game server management panel hosted with Pterodactyl
 
       - CI/CD:
           - ArgoCD:
@@ -21,7 +21,7 @@ homepage:
               description: CI/CD GitOps delivery tool
           - Gitea:
               icon: gitea.png
-              href: 'http://gitea.zenyoung.dev'
+              href: 'https://gitea.zenyoung.dev'
               description: Code repository and CI/CD pipeline
 
       - Monitoring:
@@ -31,13 +31,21 @@ homepage:
               description: Metric visualization and monitoring dashboard
           - Prometheus:
               icon: prometheus.png
-              href: 'http://metrics.k8s.zenyoung.dev'
+              href: 'https://metrics.k8s.zenyoung.dev'
               description: Systems monitoring and alerting toolkit
 
       - Infrastructure:
+          - Proxmox:
+              icon: proxmox.png
+              href: 'https://pve.caloocan.zenyoung.dev'
+              description: Virtualization management platform
+          - OPNsense:
+              icon: opnsense.png
+              href: 'https://opnsense.caloocan.zenyoung.dev'
+              description: Firewall and routing software
           - Longhorn:
               icon: longhorn.png
-              href: 'http://longhorn.k8s.zenyoung.dev'
+              href: 'https://longhorn.k8s.zenyoung.dev'
               description: Distributed block storage system for Kubernetes
           - Harbor:
               icon: harbor.png
