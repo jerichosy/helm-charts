@@ -1,6 +1,6 @@
 homepage:
   image:
-    tag: v0.9.12 
+    tag: latest 
 
   config:
     bookmarks:
