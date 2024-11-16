@@ -3,39 +3,45 @@ homepage:
     bookmarks:
       - Developer:
           - SEGS Helm Charts:
-              - abbr: SEGS-GH
+              - abbr: SEGS-Helm
                 href: 'https://github.com/jerichosy/helm-charts'
                 icon: github.png
 
     services:
-      - GitOps:
+      - Services:
+          - GameServer:
+            icon: pterodactyl.png
+            href: 'https://gameserver.zenyoung.dev'
+            description: Game server panel hosted with Pterodactyl
+
+      - CI/CD:
           - ArgoCD:
               icon: argocd.png
-              href: 'https://172.25.85.182:31760'
+              href: 'https://argocd.k8s.zenyoung.dev'
               description: CI/CD GitOps delivery tool
           - Gitea:
               icon: gitea.png
-              href: 'http://172.25.85.182:31763'
+              href: 'http://gitea.zenyoung.dev'
               description: Code repository and CI/CD pipeline
 
       - Monitoring:
           - Grafana:
               icon: grafana.png
-              href: 'https://172.25.85.182/grafana/'
+              href: 'https://grafana.zenyong.dev'
               description: Metric visualization and monitoring dashboard
           - Prometheus:
               icon: prometheus.png
-              href: 'http://172.25.85.182:31765'
+              href: 'http://metrics.k8s.zenyoung.dev'
               description: Systems monitoring and alerting toolkit
 
-      - Management:
+      - Infrastructure:
           - Longhorn:
               icon: longhorn.png
-              href: 'http://172.25.85.182:31761'
+              href: 'http://longhorn.k8s.zenyoung.dev'
               description: Distributed block storage system for Kubernetes
           - Harbor:
               icon: harbor.png
-              href: 'https://172.25.85.182:31762'
+              href: 'https://registry.k8s.zenyoung.dev'
               description: Artifact and image registry
 
     widgets:
@@ -52,8 +58,11 @@ homepage:
             memory: true
             showLabel: true
       - search:
-          provider: duckduckgo
+          provider: custom
+          url: https://search.zenyoung.dev
           target: _blank
+          suggestionUrl: https://search.zenyoung.dev/autocompleter?q=
+          showSearchSuggestions: true
 
     kubernetes:
       mode: cluster
@@ -70,7 +79,7 @@ homepage:
     main:
       enabled: true
       hosts:
-        - host: 172.25.85.182.sslip.io
+        - host: home.zenyoung.dev
           paths:
             - path: /
               pathType: Prefix
