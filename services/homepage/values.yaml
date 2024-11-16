@@ -37,48 +37,58 @@ homepage:
               icon: pterodactyl.png
               href: 'https://gameserver.zenyoung.dev'
               description: Game server management panel using Pterodactyl
+              siteMonitor: 'https://gameserver.zenyoung.dev'
 
       - CI/CD:
           - ArgoCD:
               icon: argocd.png
               href: 'https://argocd.k8s.zenyoung.dev'
               description: CI/CD GitOps delivery tool
+              siteMonitor: 'https://argocd.k8s.zenyoung.dev'
           - Gitea:
               icon: gitea.png
               href: 'https://gitea.zenyoung.dev'
               description: Code repository and CI/CD pipeline
+              siteMonitor: 'https://gitea.zenyoung.dev'
 
       - Monitoring:
           - Grafana:
               icon: grafana.png
               href: 'https://grafana.zenyoung.dev'
               description: Metric visualization and monitoring dashboard
+              siteMonitor: 'https://grafana.zenyoung.dev'
           - Prometheus:
               icon: prometheus.png
               href: 'https://metrics.k8s.zenyoung.dev'
               description: Systems monitoring and alerting toolkit
+              siteMonitor: 'https://metrics.k8s.zenyoung.dev'
 
       - Infrastructure:
           - Proxmox:
               icon: proxmox.png
               href: 'https://pve.caloocan.zenyoung.dev'
               description: Virtualization management platform
+              siteMonitor: 'https://pve.caloocan.zenyoung.dev'
           - OPNsense:
               icon: opnsense.png
               href: 'https://opnsense.caloocan.zenyoung.dev'
               description: Firewall and routing software
+              siteMonitor: 'https://opnsense.caloocan.zenyoung.dev'
           - Zerotier One:
               icon: zerotier.png
               href: 'https://zt.zenyoung.dev'
               description: Self-hosted Zerotier controller using ZTNET
+              siteMonitor: 'https://zt.zenyoung.dev'
           - Longhorn:
               icon: longhorn.png
               href: 'https://longhorn.k8s.zenyoung.dev'
               description: Distributed block storage system for Kubernetes
+              siteMonitor: 'https://longhorn.k8s.zenyoung.dev'
           - Harbor:
               icon: harbor.png
               href: 'https://registry.k8s.zenyoung.dev'
               description: Artifact and image registry
+              siteMonitor: 'https://registry.k8s.zenyoung.dev'
 
     widgets:
       - kubernetes:
