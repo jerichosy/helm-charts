@@ -48,7 +48,7 @@ homepage:
               icon: argocd.png
               href: 'https://argocd.k8s.zenyoung.dev'
               description: CI/CD GitOps delivery tool
-              siteMonitor: 'https://argocd.k8s.zenyoung.dev'
+              ping: 'api.k8s.zenyoung.dev'
           - Gitea:
               icon: gitea.png
               href: 'https://gitea.zenyoung.dev'
@@ -72,12 +72,12 @@ homepage:
               icon: proxmox.png
               href: 'https://pve.caloocan.zenyoung.dev'
               description: Virtualization management platform
-              siteMonitor: 'https://pve.caloocan.zenyoung.dev'
+              ping: 'pve.caloocan.zenyoung.dev'
           - OPNsense:
               icon: opnsense.png
               href: 'https://opnsense.caloocan.zenyoung.dev'
               description: Firewall and routing software
-              siteMonitor: 'https://opnsense.caloocan.zenyoung.dev'
+              ping: 'opnsense.caloocan.zenyoung.dev'
           - Zerotier One:
               icon: zerotier.png
               href: 'https://zt.zenyoung.dev'
