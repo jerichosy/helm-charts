@@ -2,6 +2,10 @@ homepage:
   config:
     bookmarks:
       - Developer:
+          - SEGS Feature Tracker:
+              - abbr: SEGS-Tracker
+                href: 'https://github.com/users/jerichosy/projects/3'
+                icon: github.png
           - SEGS Helm Charts:
               - abbr: SEGS-Helm
                 href: 'https://github.com/jerichosy/helm-charts'
