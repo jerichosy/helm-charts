@@ -47,6 +47,10 @@ homepage:
               icon: opnsense.png
               href: 'https://opnsense.caloocan.zenyoung.dev'
               description: Firewall and routing software
+          - Zerotier:
+              icon: zerotier.png
+              href: 'https://zt.zenyoung.dev'
+              description: Self-hosted Zerotier controller using ZTNET
           - Longhorn:
               icon: longhorn.png
               href: 'https://longhorn.k8s.zenyoung.dev'
