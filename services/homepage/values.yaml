@@ -9,7 +9,7 @@ homepage:
 
     services:
       - Services:
-          - GameServer:
+          - Game Server:
             icon: pterodactyl.png
             href: 'https://gameserver.zenyoung.dev'
             description: Game server panel hosted with Pterodactyl
@@ -59,7 +59,7 @@ homepage:
             showLabel: true
       - search:
           provider: custom
-          url: https://search.zenyoung.dev
+          url: https://search.zenyoung.dev/search?q=
           target: _blank
           suggestionUrl: https://search.zenyoung.dev/autocompleter?q=
           showSearchSuggestions: true
