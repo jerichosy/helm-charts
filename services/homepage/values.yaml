@@ -88,11 +88,6 @@ homepage:
               href: 'https://longhorn.k8s.zenyoung.dev'
               description: Distributed block storage system for Kubernetes
               siteMonitor: 'https://longhorn.k8s.zenyoung.dev'
-          - Harbor:
-              icon: harbor.png
-              href: 'https://registry.k8s.zenyoung.dev'
-              description: Artifact and image registry
-              siteMonitor: 'https://registry.k8s.zenyoung.dev'
 
     widgets:
       - kubernetes:
