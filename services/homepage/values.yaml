@@ -47,7 +47,7 @@ homepage:
               icon: opnsense.png
               href: 'https://opnsense.caloocan.zenyoung.dev'
               description: Firewall and routing software
-          - Zerotier:
+          - Zerotier One:
               icon: zerotier.png
               href: 'https://zt.zenyoung.dev'
               description: Self-hosted Zerotier controller using ZTNET
