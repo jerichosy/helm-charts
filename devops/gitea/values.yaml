@@ -6,6 +6,7 @@ gitea:
       server:
        ENABLE_PPROF: true
        DOMAIN: gitea.zenyoung.dev
+       PROTOCOL: https
     admin:
       username: gitea_admin
       password: CHANGEME!
