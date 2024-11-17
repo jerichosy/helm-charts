@@ -13,6 +13,8 @@ gitea:
 
   actions:
     enabled: true
+    provisioning:
+      enabled: true
 
   persistence:
     enabled: true
