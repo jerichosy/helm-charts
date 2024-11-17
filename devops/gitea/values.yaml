@@ -12,12 +12,19 @@ gitea:
       email: admin@segs.local
 
   actions:
-    init:
-      image:
-        repository: node
-        tag: 23-alpine3.19
     statefulset:
-      labels: ubuntu-latest:docker://node:16-bullseye,ubuntu-22.04:docker://node:16-bullseye,ubuntu-20.04:docker://node:16-bullseye,ubuntu-18.04:docker://node:16-buster
+      actRunner:
+        config: |
+          log:
+            level: debug
+          cache:
+            enabled: false
+          runner:
+            labels:
+              - "ubuntu-latest:docker://node:16-bullseye"
+              - "ubuntu-22.04:docker://node:16-bullseye"
+              - "ubuntu-20.04:docker://node:16-bullseye"
+              - "ubuntu-18.04:docker://node:16-buster"
     enabled: true
     provisioning:
       enabled: true
