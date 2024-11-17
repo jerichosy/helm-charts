@@ -12,6 +12,10 @@ gitea:
       email: admin@segs.local
 
   actions:
+    init:
+      image:
+        repository: node
+        tag: 23-alpine3.19
     enabled: true
     provisioning:
       enabled: true
