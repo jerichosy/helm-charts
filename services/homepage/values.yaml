@@ -24,6 +24,10 @@ homepage:
               - abbr: CF
                 href: 'https://dash.cloudflare.com'
                 icon: cloudflare.png
+          - InfluxDB:
+              - abbr: Influx
+                href: 'https://cloud2.influxdata.com'
+                icon: influxdb.png
 
       - Registry:
           - Docker Hub:
