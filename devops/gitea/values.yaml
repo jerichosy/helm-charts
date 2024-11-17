@@ -1,5 +1,7 @@
 gitea:
   gitea:
+    metrics:
+      enabled: true
     config:
       server:
        ENABLE_PPROF: true
@@ -7,19 +9,22 @@ gitea:
       username: gitea_admin
       password: CHANGEME!
       email: admin@segs.local
-    metrics:
-      enabled: true
+
+  actions:
+    enabled: true
 
   persistence:
     enabled: true
-    storageClass: longhorn
+    size: 10Gi
 
   service:
     http:
       type: LoadBalancer
-      port: 31763
+      port: 32607
       annotations:
         prometheus.io/scrape: "true"
+        prometheus.io/path: "/metrics"
+        prometheus.io/port: "32607"
     ssh:
       type: LoadBalancer
-      port: 31764
+      port: 32608
