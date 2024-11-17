@@ -12,10 +12,6 @@ gitea:
       email: admin@segs.local
 
   actions:
-    init:
-      image:
-        repository: ubuntu
-        tag: 22.04
     enabled: true
     provisioning:
       enabled: true
