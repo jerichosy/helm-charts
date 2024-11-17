@@ -5,7 +5,7 @@ gitea:
     config:
       server:
        ENABLE_PPROF: true
-       ROOT_URL: https://gitea.zenyoung.dev
+       DOMAIN: gitea.zenyoung.dev
     admin:
       username: gitea_admin
       password: CHANGEME!
