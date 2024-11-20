@@ -39,6 +39,12 @@ homepage:
                 href: 'https://artifacthub.io/'
                 icon: artifacthub.png
 
+      - Utility:
+          - Proxmox VE Helper-Scripts:
+              - abbr: tteck
+                href: 'https://community-scripts.github.io/ProxmoxVE/'
+                icon: 'https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/images/logo.png'
+
     services:
       - Services:
           - SEGS Game Center:
