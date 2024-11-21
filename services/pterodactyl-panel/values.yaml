@@ -33,16 +33,9 @@ mariadb:
     password: CHANGME!
     database: pterodactyl-db
   primary:
-    livenessProbe:
-      enabled: false
-    readinessProbec:
-      enabled: false
-    startupProbe:
-      enabled: false
     service:
       ports:
         mysql: 3306
-    existingConfigmap: temp-mysql-configmap
   passwordUpdateJob:
     enabled: true
 
