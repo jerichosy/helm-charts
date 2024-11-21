@@ -9,3 +9,12 @@ mariadb-galera:
 
   persistence:
     size: 8Gi
+
+  # Parameters needed when cluster was not cleanly stopped
+  # docs: https://artifacthub.io/packages/helm/bitnami/mariadb-galera#bootstraping-a-node-other-than-0
+  # issue: https://github.com/bitnami/charts/issues/9893
+  galera:
+    bootstrap:
+      forceBootstrap: false
+      bootstrapFromNode: 0
+      forceSafeToBootstrap: false
