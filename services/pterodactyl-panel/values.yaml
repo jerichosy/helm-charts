@@ -42,6 +42,7 @@ mariadb:
     service:
       ports:
         mysql: 3306
+    existingConfigmap: temp-mysql-configmap
   passwordUpdateJob:
     enabled: true
 
