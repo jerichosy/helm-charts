@@ -1,4 +1,9 @@
 gitea:
+  postgresql-ha:
+    witness:
+      pdb:
+        create: false
+
   gitea:
     metrics:
       enabled: true
