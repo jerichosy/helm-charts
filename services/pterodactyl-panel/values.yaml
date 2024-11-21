@@ -33,6 +33,8 @@ mariadb:
     password: CHANGME!
     database: pterodactyl-db
   primary:
+    livenessProbe:
+      enabled: false
     service:
       ports:
         mysql: 3306
