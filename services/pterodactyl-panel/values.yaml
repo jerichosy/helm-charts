@@ -35,6 +35,10 @@ mariadb:
   primary:
     livenessProbe:
       enabled: false
+    readinessProbec:
+      enabled: false
+    startupProbe:
+      enabled: false
     service:
       ports:
         mysql: 3306
