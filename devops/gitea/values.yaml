@@ -1,5 +1,10 @@
 gitea:
   postgresql-ha:
+    postgresql:
+      readinessProbe:
+        enabled: true
+      livenessProbe:
+        enabled: true
     witness:
       pdb:
         create: false
