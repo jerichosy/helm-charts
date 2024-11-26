@@ -21,6 +21,8 @@ gitea:
   persistence:
     enabled: true
     size: 10Gi
+    accessModes:
+      - "ReadWriteMany"
 
   gitea:
     admin:
