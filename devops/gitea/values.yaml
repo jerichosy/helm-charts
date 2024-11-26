@@ -7,6 +7,13 @@ gitea:
 
   postgresql:
     enabled: true
+    primary:
+      persistence:
+        size: 10Gi
+    global:
+      postgresql:
+        auth:
+          password: CHANGEME!
 
   postgresql-ha:
     enabled: false
