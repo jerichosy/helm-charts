@@ -1,27 +1,41 @@
 gitea:
+  redis-cluster:
+    enabled: false
+
+  redis:
+    enabled: true
+
+  postgresql:
+    enabled: true
+
   postgresql-ha:
-    postgresql:
-      readinessProbe:
-        enabled: true
-      livenessProbe:
-        enabled: true
-    witness:
-      pdb:
-        create: false
+    enabled: false
+
+  persistence:
+    enabled: true
+    size: 10Gi
 
   gitea:
-    metrics:
-      enabled: true
-    config:
-      server:
-       ENABLE_PPROF: true
-       DOMAIN: gitea.zenyoung.dev
     admin:
       username: gitea_admin
       password: CHANGEME!
       email: admin@segs.local
+    config:
+      server:
+       ENABLE_PPROF: true
+       DOMAIN: gitea.zenyoung.dev
+      database:
+        DB_TYPE: postgres
+      indexer:
+        ISSUE_INDEXER_TYPE: bleve
+        REPO_INDEXER_ENABLED: true
+    metrics:
+      enabled: true
 
   actions:
+    enabled: true
+    provisioning:
+      enabled: true
     statefulset:
       actRunner:
         config: |
@@ -33,15 +47,6 @@ gitea:
             labels:
               - "node-16:docker://node:16-bullseye"
               - "ubuntu-latest:docker://catthehacker/ubuntu:act-22.04"
-    enabled: true
-    provisioning:
-      enabled: true
-
-  persistence:
-    enabled: true
-    size: 10Gi
-    accessModes:
-      - "ReadWriteMany"
 
   service:
     http:
