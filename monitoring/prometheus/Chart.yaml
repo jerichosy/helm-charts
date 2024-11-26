@@ -2,8 +2,8 @@ apiVersion: v2
 name: prometheus
 description: A SEGS Helm chart for Prometheus
 type: application
-version: 1.2.0
-appVersion: "1.16.0"
+version: 1.2.1
+appVersion: "v2.55.1"
 dependencies:
   - name: prometheus
     version: "25.29.0"
