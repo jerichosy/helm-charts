@@ -1,6 +1,6 @@
 dependencies:
-- name: mariadb-galera
+- name: mariadb
   repository: https://charts.bitnami.com/bitnami
-  version: 14.0.12
-digest: sha256:cb4c9ccea46356899f641496acf2fe0831d33b7de9c259d2d66e8c3a1b29dedd
-generated: "2024-11-13T12:12:49.789107651+08:00"
+  version: 20.0.0
+digest: sha256:0dc7f411ffa504e94236409508bc2a73a079b2a07af57b2e749e1c68ec78d75e
+generated: "2024-11-26T23:06:42.282692737+08:00"
