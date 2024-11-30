@@ -47,6 +47,11 @@ homepage:
 
     services:
       - Services:
+          - SearXNG:
+              icon: searxng.png
+              href: 'https://search.zenyoung.dev'
+              description: 'Privacy-respecting, hackable metasearch engine'
+              siteMonitor: 'https://search.zenyoung.dev'
           - SEGS Game Center:
               icon: pterodactyl.png
               href: 'https://gameserver.zenyoung.dev'
@@ -112,12 +117,6 @@ homepage:
             cpu: true
             memory: true
             showLabel: true
-      - search:
-          provider: custom
-          url: https://search.zenyoung.dev/search?q=
-          target: _blank
-          suggestionUrl: https://search.zenyoung.dev/autocompleter?q=
-          showSearchSuggestions: true
 
     kubernetes:
       mode: cluster
