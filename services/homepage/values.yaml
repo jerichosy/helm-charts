@@ -71,6 +71,11 @@ homepage:
               siteMonitor: 'https://gitea.zenyoung.dev'
 
       - Monitoring:
+          - Uptime Kuma:
+              icon: uptime-kuma.png
+              href: 'https://up.zenyoung.dev'
+              description: Easy-to-use self-hosted monitoring tool
+              siteMonitor: 'https://up.zenyoung.dev'
           - Grafana:
               icon: grafana.png
               href: 'https://grafana.zenyoung.dev'
