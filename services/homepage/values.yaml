@@ -122,6 +122,10 @@ homepage:
             cpu: true
             memory: true
             showLabel: true
+      - widget:
+          type: uptimekuma
+          url: 'https://up.zenyoung.dev'
+          slug: 'zn21'
 
     kubernetes:
       mode: cluster
