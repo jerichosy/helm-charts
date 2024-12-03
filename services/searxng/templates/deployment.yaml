@@ -54,6 +54,7 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{ include "searxng.fullname" . }}-configmap
+      volumes:
         - name: settings-yaml-secret
           secret:
             secretName: "{{ include "searxng.fullname" . }}-settings"
