@@ -48,22 +48,14 @@ spec:
             {{- toYaml .Values.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- with .Values.volumeMounts }}
           volumeMounts:
             - name: searxng-pvc
               mountPath: /etc/searxng
             - name: settings-yaml-secret
               mountPath: /etc/searxng
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
           envFrom:
             - configMapRef:
                 name: {{ include "searxng.fullname" . }}-configmap
-      {{- with .Values.volumes }}
-      volumes:
-        - name: searxng-pvc
-          persistentVolumeClaim:
-            claimName: "{{ include "searxng.fullname" . }}-data"
         - name: settings-yaml-secret
           secret:
             secretName: "{{ include "searxng.fullname" . }}-settings"
@@ -72,8 +64,6 @@ spec:
                 path: settings.yml
               - key: limiter.toml
                 path: limiter.toml
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
