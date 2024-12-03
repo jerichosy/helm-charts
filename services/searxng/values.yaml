@@ -6,6 +6,9 @@ searxng:
     threads: 4
     workers: 4
 
+persistence:
+  size: 64Mi
+
 valkey:
   architecture: standalone
   auth:
