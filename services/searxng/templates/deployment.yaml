@@ -49,8 +49,6 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
-            - name: searxng-pvc
-              mountPath: /etc/searxng
             - name: settings-yaml-secret
               mountPath: /etc/searxng
           envFrom:
