@@ -54,12 +54,9 @@ gitea:
             enabled: false
           runner:
             labels:
+              - "host:host"
               - "node-16:docker://node:16-bullseye"
               - "ubuntu-latest:docker://catthehacker/ubuntu:act-22.04"
-      dind:
-        extraEnvs:
-          - name: DOCKER_HOST
-            value: unix:///var/run/user/1000/docker.sock
 
   service:
     http:
