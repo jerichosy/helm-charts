@@ -31,8 +31,8 @@ gitea:
       email: admin@segs.local
     config:
       server:
-       ENABLE_PPROF: true
-       DOMAIN: gitea.zenyoung.dev
+        ENABLE_PPROF: true
+        DOMAIN: gitea.zenyoung.dev
       database:
         DB_TYPE: postgres
       indexer:
@@ -56,6 +56,10 @@ gitea:
             labels:
               - "node-16:docker://node:16-bullseye"
               - "ubuntu-latest:docker://catthehacker/ubuntu:act-22.04"
+      dind:
+        extraEnvs:
+          - name: DOCKER_HOST
+            value: unix:///var/run/user/1000/docker.sock
 
   service:
     http:
