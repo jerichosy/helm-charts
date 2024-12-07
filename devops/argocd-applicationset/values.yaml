@@ -1,0 +1,6 @@
+git:
+  repoURL: my-deployments-repo.git
+  target: HEAD
+
+cluster:
+  server: https://kubernetes.default.svc
