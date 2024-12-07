@@ -15,7 +15,6 @@ spec:
   template:
     metadata:
       name: '{{ "{{" }}.path.basename}}'
-      namespace: argocd
     spec:
       project: default
       source:
@@ -24,3 +23,6 @@ spec:
         path: '{{ "{{" }}.path.path}}'
       destination:
         server: {{ .Values.cluster.server }}
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
