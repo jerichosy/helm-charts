@@ -23,7 +23,7 @@ spec:
         path: '{{ "{{" }}.path.path}}'
       destination:
         server: {{ .Values.cluster.server }}
-        namespace: '{{ "{{" }}.path.basename}}'
+        namespace: argocd
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
