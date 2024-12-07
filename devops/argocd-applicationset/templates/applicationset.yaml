@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: {{ include .Chart.Name }}
+  name: {{ include "argocd-applicationset.fullname" . }}
   namespace: argocd
 spec:
   goTemplate: true
@@ -14,13 +14,13 @@ spec:
       - path: "*"
   template:
     metadata:
-      name: '{{.path.basename}}'
+      name: '{{ "{{" }}.path.basename}}'
       namespace: argocd
     spec:
       project: default
       source:
         repoURL: {{ .Values.git.repoURL }}
         targetRevision: HEAD
-        path: '{{.path.path}}'
+        path: '{{ "{{" }}.path.path}}'
       destination:
         server: {{ .Values.cluster.server }}
