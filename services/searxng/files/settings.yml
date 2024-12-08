@@ -14,4 +14,4 @@ ui:
   static_use_hash: true
 
 redis:
-  url: {{ printf "redis://:%s@%s-%s:6379/0" .Values.valkey.auth.password .Release.Name .Values.searxng.redis.hostname }}
+  url: {{ printf "redis://%s-%s:6379/0" .Release.Name .Values.searxng.redis.hostname }}
