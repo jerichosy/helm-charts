@@ -2,10 +2,6 @@ mariadb:
   architecture: standalone
   auth:
     existingSecret: wings-mariadb-secret
-  passwordUpdateJob:
-    enabled: true
-    previousPasswords:
-      existingSecret: wings-mariadb-secret
   primary:
     service:
       type: LoadBalancer
