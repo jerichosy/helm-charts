@@ -60,3 +60,10 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Generate random alphanumeric string
+*/}}
+{{- define "searxng.generateString" -}}
+{{- randAlphaNum 32 | nospace -}}
+{{- end }}
