@@ -1,6 +1,6 @@
 searxng:
   redis:
-    hostname: valkey
+    hostname: valkey-primary
   uwsgi:
     threads: 4
     workers: 4
