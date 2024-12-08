@@ -51,7 +51,7 @@ spec:
           volumeMounts:
             - name: searxng-pvc
               mountPath: /etc
-            - name: searxng-yaml-secret
+            - name: settings-yaml-secret
               mountPath: /etc/searxng
           envFrom:
             - configMapRef:
