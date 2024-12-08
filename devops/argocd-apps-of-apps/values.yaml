@@ -1,7 +1,7 @@
 source:
   repoURL: my-deployments-repo.git
   target: HEAD
-  path: ''
+  path: "./"
 
 destination:
   server: https://kubernetes.default.svc
