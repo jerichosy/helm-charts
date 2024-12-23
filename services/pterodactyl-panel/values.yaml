@@ -5,15 +5,14 @@ panel:
     env: production
     envOnly: false
     tz: Asia/Manila
-    url: http://example.com
+    url: https://gameserver.zenyoung.dev
   mail:
+    username: ptero
     driver: smtp
     encryption: true
     host: mail
     from: noreply@example.com
     port: 1025
-    username: username
-    password: CHANGEME!
   proxy:
     trustedHosts: ""
   queue:
@@ -22,27 +21,26 @@ panel:
     driver: redis
   cache:
     driver: redis
+  existingSecret: panel-secrets
 
 persistence:
   size: 2Gi
 
 mariadb:
   auth:
-    rootPassword: CHANGEME!
-    username: pterodactyl-user
-    password: CHANGME!
-    database: pterodactyl-db
+    username: pterodactyl
+    database: panel
+    existingSecret: panel-mariadb-secrets
   primary:
     service:
       ports:
         mysql: 3306
-  passwordUpdateJob:
-    enabled: false
 
 redis:
   architecture: standalone
   auth:
-    password: CHANGEME!
+    existingSecret: panel-redis-secrets
+    existingSecretPasswordKey: password
   master:
     service:
       ports:

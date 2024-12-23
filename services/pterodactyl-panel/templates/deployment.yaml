@@ -18,7 +18,6 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
-        checksum/secret: {{ include (print $.Template.BasePath "/secrets.yaml") . | sha256sum }}
       labels:
         {{- include "pterodactyl-panel.labels" . | nindent 8 }}
         {{- with .Values.podLabels }}
@@ -59,7 +58,7 @@ spec:
               mountPath: /app/storage/logs
           envFrom:
             - secretRef:
-                name: {{ include "pterodactyl-panel.fullname" . }}-secrets
+                name: {{ .Values.panel.existingSecret }}
             - configMapRef:
                 name: {{ include "pterodactyl-panel.fullname" . }}-configmap
       volumes:

@@ -3,10 +3,13 @@ kind: ConfigMap
 metadata:
   name: {{ include "pterodactyl-panel.fullname" . }}-configmap
 data:
+  DB_USERNAME: {{ .Values.mariadb.auth.username }}
+  DB_DATABASE: {{ .Values.mariadb.auth.database }}
   DB_HOST: {{ .Release.Name }}-mariadb
   DB_PORT: {{ .Values.mariadb.primary.service.ports.mysql | quote }}
   REDIS_HOST: {{ .Release.Name }}-redis-master
   REDIS_PORT: {{ .Values.redis.master.service.ports.redis | quote }}
+  MAIL_USERNAME: {{ .Values.panel.mail.username }}
   MAIL_FROM: {{ .Values.panel.mail.from }}
   MAIL_HOST: {{ .Values.panel.mail.host }}
   MAIL_PORT: {{ .Values.panel.mail.port | quote }}
