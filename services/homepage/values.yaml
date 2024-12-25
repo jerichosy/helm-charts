@@ -44,6 +44,10 @@ homepage:
               - abbr: tteck
                 href: 'https://community-scripts.github.io/ProxmoxVE/'
                 icon: 'https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/images/logo.png'
+          - Pterodactyl Eggs:
+              - abbr: ptero-eggs
+                href: 'https://pterodactyleggs.com/search'
+                icon: pterodactyl.png
 
     services:
       - Services:
