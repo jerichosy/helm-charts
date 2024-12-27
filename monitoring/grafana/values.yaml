@@ -1,11 +1,4 @@
 grafana:
-  admin:
-    user: admin
-    existingSecret: grafana-secret
   config:
     useGrafanaIniFile: true
     grafanaIniConfigMap: grafana-extra-ini
-  service:
-    type: LoadBalancer
-    ports:
-      grafana: 32604
