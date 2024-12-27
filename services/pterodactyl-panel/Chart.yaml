@@ -2,7 +2,7 @@ apiVersion: v2
 name: pterodactyl-panel
 description: A SEGS Helm chart for Pterodactyl Panel
 type: application
-version: 1.2.0
+version: 1.2.1
 appVersion: "v1.11.10"
 dependencies:
   - name: mariadb
