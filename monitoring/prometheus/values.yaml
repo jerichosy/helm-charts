@@ -1,7 +1,0 @@
-prometheus:
-  server:
-    service:
-      type: LoadBalancer
-      servicePort: 32603
-    persistentVolume:
-      size: 16Gi
