@@ -14,6 +14,7 @@ data:
   MAIL_HOST: {{ .Values.panel.mail.host }}
   MAIL_PORT: {{ .Values.panel.mail.port | quote }}
   APP_ENV: {{ .Values.panel.app.env }}
+  APP_DEBUG: {{ .Values.panel.app.debug }}
   APP_ENVIRONMENT_ONLY: {{ .Values.panel.app.envOnly | quote }}
   APP_SERVICE_AUTHOR: {{ .Values.panel.app.service.author }}
   APP_TIMEZONE: {{ .Values.panel.app.tz }}

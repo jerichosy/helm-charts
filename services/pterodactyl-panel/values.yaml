@@ -3,6 +3,7 @@ panel:
     service:
       author: noreply@example.com
     env: production
+    debug: false
     envOnly: false
     tz: Asia/Manila
     url: https://gameserver.zenyoung.dev
