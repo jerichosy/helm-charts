@@ -5,8 +5,8 @@ panel:
     env: production
     debug: false
     envOnly: false
-    tz: Asia/Manila
-    url: https://gameserver.zenyoung.dev
+    tz: Etc/UTC
+    url: https://panel.example.com
   mail:
     username: ptero
     driver: smtp
@@ -97,9 +97,9 @@ securityContext: {}
 # This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
 service:
   # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
-  type: LoadBalancer
+  type: ClusterIP
   # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
-  port: 32605
+  port: 80
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
