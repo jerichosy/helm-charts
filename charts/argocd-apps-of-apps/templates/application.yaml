@@ -20,3 +20,11 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  ignoreDifferences:
+    - group: "*"
+      kind: "Application"
+      namespace: "*"
+      jsonPointers:
+        - /spec/syncPolicy/automated
+        - /metadata/annotations/argocd.argoproj.io~1refresh
+        - /operation
