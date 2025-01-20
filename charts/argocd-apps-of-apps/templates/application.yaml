@@ -28,3 +28,14 @@ spec:
         - /spec/syncPolicy/automated
         - /metadata/annotations/argocd.argoproj.io~1refresh
         - /operation
+  {{- if .Values.extraIgnoreDifferences }}
+    {{- range .Values.extraIgnoreDifferences }}
+    - group: {{ .group | quote }}
+      kind: {{ .kind | quote }}
+      namespace: {{ .namespace | quote }}
+      jsonPointers:
+        {{- range .jsonPointers }}
+        - {{ . }}
+        {{- end }}
+    {{- end }}
+  {{- end }}
