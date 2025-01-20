@@ -48,12 +48,17 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
+            - name: searxng-config
+              mountPath: /etc/searxng
             - name: settings-yaml-secret
               mountPath: /etc/searxng
           envFrom:
             - configMapRef:
                 name: {{ include "searxng.fullname" . }}-configmap
       volumes:
+        - name: searxng-config
+          emptyDir:
+            sizeLimit: 64Mi
         - name: settings-yaml-secret
           secret:
             secretName: "{{ include "searxng.fullname" . }}-settings"
