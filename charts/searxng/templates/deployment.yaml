@@ -51,7 +51,11 @@ spec:
             - name: searxng-config
               mountPath: /etc/searxng
             - name: settings-yaml-secret
-              mountPath: /etc/searxng
+              mountPath: /etc/searxng/settings.yml
+              subPath: settings.yml
+            - name: settings-yaml-secret
+              mountPath: /etc/searxng/limiter.toml
+              subPath: limiter.toml
           envFrom:
             - configMapRef:
                 name: {{ include "searxng.fullname" . }}-configmap
@@ -62,11 +66,6 @@ spec:
         - name: settings-yaml-secret
           secret:
             secretName: "{{ include "searxng.fullname" . }}-settings"
-            items:
-              - key: settings.yml
-                path: settings.yml
-              - key: limiter.toml
-                path: limiter.toml
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
