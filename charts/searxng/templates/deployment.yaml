@@ -48,24 +48,20 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
-            - name: searxng-pvc
+            - name: settings-yaml-secret
               mountPath: /etc/searxng
-            - name: settings-yaml-secret
-              mountPath: /etc/searxng/settings.yml
-              subPath: settings.yml
-            - name: settings-yaml-secret
-              mountPath: /etc/searxng/limiter.toml
-              subPath: limiter.toml
           envFrom:
             - configMapRef:
                 name: {{ include "searxng.fullname" . }}-configmap
       volumes:
-        - name: searxng-pvc
-          persistentVolumeClaim:
-            claimName: "{{ include "searxng.fullname" . }}-data"
         - name: settings-yaml-secret
           secret:
             secretName: "{{ include "searxng.fullname" . }}-settings"
+            items:
+              - key: settings.yml
+                path: settings.yml
+              - key: limiter.toml
+                path: limiter.toml
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
